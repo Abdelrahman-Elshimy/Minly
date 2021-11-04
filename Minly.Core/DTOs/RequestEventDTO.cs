@@ -24,7 +24,6 @@ namespace Minly.Core.DTOs
 
     public class CreateRequestEventDTO
     {
-        public int Id { get; set; }
         public double Price { get; set; }
         public DateTime DateCreated { get; set; }
         public bool Status { get; set; }
