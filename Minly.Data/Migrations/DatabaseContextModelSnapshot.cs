@@ -63,22 +63,22 @@ namespace Minly.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "74c9e69c-57d4-42f6-a3d4-afe24c95a24e",
-                            ConcurrencyStamp = "69d49d6b-4dac-4a74-b908-6bab1e41e38c",
+                            Id = "2b66e7b1-f2f8-4d1e-9b5c-4b76446832d2",
+                            ConcurrencyStamp = "0ecb4ef7-d625-4de2-9e9c-56f6b3e0b0aa",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "67e725a3-d20d-48db-96aa-1a82cbffc4d9",
-                            ConcurrencyStamp = "2de7e3f8-d6b8-415e-b3fe-0adbecc9eaa4",
+                            Id = "54d58dc7-533d-41f6-b31b-c94ec70668a3",
+                            ConcurrencyStamp = "41d8d60b-5615-42de-8cc6-2367b038b3a9",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "8d05b41e-710e-4b05-90b5-43c28b22ed49",
-                            ConcurrencyStamp = "2a529517-5528-42dd-bb73-c691b0f6690c",
+                            Id = "6d119d2e-0352-49a7-8963-ef18a3c225e0",
+                            ConcurrencyStamp = "4ddafb74-b33b-42ba-afd0-770bcfddca0e",
                             Name = "Star",
                             NormalizedName = "STAR"
                         });
@@ -471,6 +471,9 @@ namespace Minly.Data.Migrations
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("Payed")
+                        .HasColumnType("bit");
+
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
@@ -620,6 +623,32 @@ namespace Minly.Data.Migrations
                     b.HasIndex("StarId");
 
                     b.ToTable("StarRates");
+                });
+
+            modelBuilder.Entity("Minly.Data.StarResponse", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Audio")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RequestStarId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Video")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RequestStarId");
+
+                    b.ToTable("StarResponses");
                 });
 
             modelBuilder.Entity("Minly.Data.StarService", b =>
@@ -857,6 +886,17 @@ namespace Minly.Data.Migrations
                     b.Navigation("ApiUser");
 
                     b.Navigation("Star");
+                });
+
+            modelBuilder.Entity("Minly.Data.StarResponse", b =>
+                {
+                    b.HasOne("Minly.Data.RequestStar", "RequestStar")
+                        .WithMany()
+                        .HasForeignKey("RequestStarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("RequestStar");
                 });
 
             modelBuilder.Entity("Minly.Data.StarService", b =>

@@ -21,6 +21,7 @@ namespace Minly.Core.IRepository
         IGenericRepository<EventRate> EventRates { get; }
         IGenericRepository<RequestEvent> RequestEvents { get; }
         IGenericRepository<RequestStar> RequestStars { get; }
+        IGenericRepository<StarResponse> StarResponses { get; }
 
 
         Task Save();

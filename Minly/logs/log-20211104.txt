@@ -1373,3 +1373,1317 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
 2021-11-04 12:13:04.386 +02:00 [INF] Generating Vary header.
 2021-11-04 12:13:04.386 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
 2021-11-04 12:13:04.388 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:44379/api/RequestStar application/json 157 - 401 - - 30.0569ms
+2021-11-04 12:48:22.603 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=4 - -
+2021-11-04 12:48:22.607 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 12:48:22.607 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 12:48:22.607 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 12:48:22.607 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 12:48:22.607 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 12:48:22.607 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 12:48:22.608 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestStarController.RequestsOfStar (Minly)'
+2021-11-04 12:48:22.608 +02:00 [INF] Route matched with {action = "RequestsOfStar", controller = "RequestStar"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfStar(Int32) on controller Minly.Controllers.RequestStarController (Minly).
+2021-11-04 12:48:22.610 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 12:48:22.633 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[Price], [r].[StarId], [r].[Status], [s].[Id], [s].[Description], [s].[Description_ar], [s].[Image], [s].[Name], [s].[Name_ar], [s].[Rate], [s].[ResponseTime]
+FROM [RequestStars] AS [r]
+INNER JOIN [Stars] AS [s] ON [r].[StarId] = [s].[Id]
+WHERE [r].[StarId] = @__id_0
+2021-11-04 12:48:22.633 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestStarDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 12:48:22.634 +02:00 [INF] Executed action Minly.Controllers.RequestStarController.RequestsOfStar (Minly) in 25.2753ms
+2021-11-04 12:48:22.634 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestStarController.RequestsOfStar (Minly)'
+2021-11-04 12:48:22.634 +02:00 [INF] Generating expiration headers.
+2021-11-04 12:48:22.634 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 10:50:22 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 12:48:22.634 +02:00 [INF] Generating Validation headers.
+2021-11-04 12:48:22.634 +02:00 [INF] Validation headers generated. ETag: Strong, "C6D4C7EA197950292F2FA338C7080A81". Last-Modified: Thu, 04 Nov 2021 10:48:22 GMT
+2021-11-04 12:48:22.634 +02:00 [INF] Generating Vary header.
+2021-11-04 12:48:22.634 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 12:48:22.634 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 12:48:22.635 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=4 - - - 200 2 application/json;+charset=utf-8 31.1802ms
+2021-11-04 12:48:28.537 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=4 - -
+2021-11-04 12:48:28.542 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 12:48:28.543 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 12:48:28.543 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 12:48:28.543 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 12:48:28.543 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 12:48:28.543 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 12:48:28.544 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestStarController.RequestsOfStar (Minly)'
+2021-11-04 12:48:28.544 +02:00 [INF] Route matched with {action = "RequestsOfStar", controller = "RequestStar"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfStar(Int32) on controller Minly.Controllers.RequestStarController (Minly).
+2021-11-04 12:48:28.545 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 12:48:28.549 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[Price], [r].[StarId], [r].[Status], [s].[Id], [s].[Description], [s].[Description_ar], [s].[Image], [s].[Name], [s].[Name_ar], [s].[Rate], [s].[ResponseTime]
+FROM [RequestStars] AS [r]
+INNER JOIN [Stars] AS [s] ON [r].[StarId] = [s].[Id]
+WHERE [r].[StarId] = @__id_0
+2021-11-04 12:48:28.549 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestStarDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 12:48:28.549 +02:00 [INF] Executed action Minly.Controllers.RequestStarController.RequestsOfStar (Minly) in 5.6286ms
+2021-11-04 12:48:28.549 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestStarController.RequestsOfStar (Minly)'
+2021-11-04 12:48:28.550 +02:00 [INF] Generating expiration headers.
+2021-11-04 12:48:28.550 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 10:50:28 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 12:48:28.550 +02:00 [INF] Generating Validation headers.
+2021-11-04 12:48:28.550 +02:00 [INF] Validation headers generated. ETag: Strong, "C6D4C7EA197950292F2FA338C7080A81". Last-Modified: Thu, 04 Nov 2021 10:48:28 GMT
+2021-11-04 12:48:28.550 +02:00 [INF] Generating Vary header.
+2021-11-04 12:48:28.550 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 12:48:28.550 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 12:48:28.551 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=4 - - - 200 2 application/json;+charset=utf-8 13.3349ms
+2021-11-04 12:48:34.588 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:44379/api/RequestEvent application/json 158
+2021-11-04 12:48:34.588 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 12:48:34.588 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 12:48:34.588 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 12:48:34.588 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 12:48:34.588 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 12:48:34.588 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 12:48:34.589 +02:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2021-11-04 12:48:34.589 +02:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+2021-11-04 12:48:34.589 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-11-04 12:48:34.589 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-11-04 12:48:34.589 +02:00 [INF] Generating expiration headers.
+2021-11-04 12:48:34.589 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 10:50:34 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 12:48:34.589 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 12:48:34.589 +02:00 [INF] Generating Vary header.
+2021-11-04 12:48:34.589 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 12:48:34.590 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:44379/api/RequestEvent application/json 158 - 401 - - 2.3204ms
+2021-11-04 12:48:41.515 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:44379/api/Account/login application/json 62
+2021-11-04 12:48:41.515 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 12:48:41.515 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 12:48:41.515 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 12:48:41.515 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 12:48:41.515 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 12:48:41.515 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 12:48:41.516 +02:00 [INF] Executing endpoint 'Minly.Controllers.AccountController.Login (Minly)'
+2021-11-04 12:48:41.520 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Minly.Core.DTOs.LoginUserDTO) on controller Minly.Controllers.AccountController (Minly).
+2021-11-04 12:48:41.559 +02:00 [INF] Login Attempt for user@example.com 
+2021-11-04 12:48:41.564 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 12:48:41.580 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 12:48:41.733 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-11-04 12:48:41.762 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 12:48:41.772 +02:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Minly.Data.ApiUser, Minly.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 12:48:41.802 +02:00 [INF] Executed action Minly.Controllers.AccountController.Login (Minly) in 281.5906ms
+2021-11-04 12:48:41.802 +02:00 [INF] Executed endpoint 'Minly.Controllers.AccountController.Login (Minly)'
+2021-11-04 12:48:41.802 +02:00 [INF] Generating expiration headers.
+2021-11-04 12:48:41.802 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 10:50:41 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 12:48:41.802 +02:00 [INF] Generating Validation headers.
+2021-11-04 12:48:41.802 +02:00 [INF] Validation headers generated. ETag: Strong, "CDE5021F52E9EC7830F6DB616922B7E5". Last-Modified: Thu, 04 Nov 2021 10:48:41 GMT
+2021-11-04 12:48:41.802 +02:00 [INF] Generating Vary header.
+2021-11-04 12:48:41.802 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 12:48:41.804 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:44379/api/Account/login application/json 62 - 202 849 application/json;+charset=utf-8 289.1167ms
+2021-11-04 12:49:05.394 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:44379/api/RequestEvent application/json 158
+2021-11-04 12:49:05.394 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 12:49:05.394 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 12:49:05.394 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 12:49:05.395 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 12:49:05.395 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 12:49:05.395 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 12:49:05.431 +02:00 [INF] Successfully validated the token.
+2021-11-04 12:49:05.431 +02:00 [INF] Authorization was successful.
+2021-11-04 12:49:05.431 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestEventController.CreateRequestEvent (Minly)'
+2021-11-04 12:49:05.435 +02:00 [INF] Route matched with {action = "CreateRequestEvent", controller = "RequestEvent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRequestEvent(Minly.Core.DTOs.CreateRequestEventDTO) on controller Minly.Controllers.RequestEventController (Minly).
+2021-11-04 12:49:05.444 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 12:49:05.463 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__createRequestEvent_EventId_0='?' (DbType = Int32), @__createRequestEvent_ApiUserId_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[EventId], [r].[Price], [r].[Status]
+FROM [RequestEvents] AS [r]
+WHERE ([r].[EventId] = @__createRequestEvent_EventId_0) AND ([r].[ApiUserId] = @__createRequestEvent_ApiUserId_1)
+2021-11-04 12:49:05.478 +02:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-11-04 12:49:05.480 +02:00 [INF] Executed action Minly.Controllers.RequestEventController.CreateRequestEvent (Minly) in 45.3599ms
+2021-11-04 12:49:05.480 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestEventController.CreateRequestEvent (Minly)'
+2021-11-04 12:49:05.480 +02:00 [INF] Generating expiration headers.
+2021-11-04 12:49:05.481 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 10:51:05 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 12:49:05.481 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 12:49:05.481 +02:00 [INF] Generating Vary header.
+2021-11-04 12:49:05.481 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 12:49:05.481 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:44379/api/RequestEvent application/json 158 - 400 40 application/json;+charset=utf-8 87.4659ms
+2021-11-04 12:49:13.863 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=4 - -
+2021-11-04 12:49:13.864 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 12:49:13.864 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 12:49:13.864 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 12:49:13.864 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 12:49:13.864 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 12:49:13.864 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 12:49:13.864 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestStarController.RequestsOfStar (Minly)'
+2021-11-04 12:49:13.864 +02:00 [INF] Route matched with {action = "RequestsOfStar", controller = "RequestStar"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfStar(Int32) on controller Minly.Controllers.RequestStarController (Minly).
+2021-11-04 12:49:13.865 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 12:49:13.882 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[Price], [r].[StarId], [r].[Status], [s].[Id], [s].[Description], [s].[Description_ar], [s].[Image], [s].[Name], [s].[Name_ar], [s].[Rate], [s].[ResponseTime]
+FROM [RequestStars] AS [r]
+INNER JOIN [Stars] AS [s] ON [r].[StarId] = [s].[Id]
+WHERE [r].[StarId] = @__id_0
+2021-11-04 12:49:13.882 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestStarDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 12:49:13.882 +02:00 [INF] Executed action Minly.Controllers.RequestStarController.RequestsOfStar (Minly) in 17.8546ms
+2021-11-04 12:49:13.882 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestStarController.RequestsOfStar (Minly)'
+2021-11-04 12:49:13.882 +02:00 [INF] Generating expiration headers.
+2021-11-04 12:49:13.882 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 10:51:13 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 12:49:13.882 +02:00 [INF] Generating Validation headers.
+2021-11-04 12:49:13.883 +02:00 [INF] Validation headers generated. ETag: Strong, "C6D4C7EA197950292F2FA338C7080A81". Last-Modified: Thu, 04 Nov 2021 10:49:13 GMT
+2021-11-04 12:49:13.883 +02:00 [INF] Generating Vary header.
+2021-11-04 12:49:13.883 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 12:49:13.883 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 12:49:13.883 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=4 - - - 200 2 application/json;+charset=utf-8 19.9636ms
+2021-11-04 12:49:18.311 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=1 - -
+2021-11-04 12:49:18.311 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 12:49:18.311 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 12:49:18.311 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 12:49:18.311 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 12:49:18.311 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 12:49:18.311 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 12:49:18.312 +02:00 [INF] Request get:/api/requeststar/requestsofstar from IP ::1 has been blocked, quota 1/5s exceeded by 1. Blocked by rule *, TraceIdentifier 8000000d-0001-fe00-b63f-84710c7967bb.
+2021-11-04 12:49:18.312 +02:00 [INF] Generating expiration headers.
+2021-11-04 12:49:18.312 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 10:51:18 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 12:49:18.312 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 12:49:18.312 +02:00 [INF] Generating Vary header.
+2021-11-04 12:49:18.312 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 12:49:18.312 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 12:49:18.312 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=1 - - - 429 - text/plain 1.5209ms
+2021-11-04 12:49:21.605 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=1 - -
+2021-11-04 12:49:21.606 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 12:49:21.607 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 12:49:21.607 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 12:49:21.607 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 12:49:21.607 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 12:49:21.607 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 12:49:21.607 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestStarController.RequestsOfStar (Minly)'
+2021-11-04 12:49:21.607 +02:00 [INF] Route matched with {action = "RequestsOfStar", controller = "RequestStar"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfStar(Int32) on controller Minly.Controllers.RequestStarController (Minly).
+2021-11-04 12:49:21.607 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 12:49:21.610 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[Price], [r].[StarId], [r].[Status], [s].[Id], [s].[Description], [s].[Description_ar], [s].[Image], [s].[Name], [s].[Name_ar], [s].[Rate], [s].[ResponseTime]
+FROM [RequestStars] AS [r]
+INNER JOIN [Stars] AS [s] ON [r].[StarId] = [s].[Id]
+WHERE [r].[StarId] = @__id_0
+2021-11-04 12:49:21.611 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestStarDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 12:49:21.611 +02:00 [INF] Executed action Minly.Controllers.RequestStarController.RequestsOfStar (Minly) in 4.0212ms
+2021-11-04 12:49:21.611 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestStarController.RequestsOfStar (Minly)'
+2021-11-04 12:49:21.611 +02:00 [INF] Generating expiration headers.
+2021-11-04 12:49:21.611 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 10:51:21 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 12:49:21.611 +02:00 [INF] Generating Validation headers.
+2021-11-04 12:49:21.611 +02:00 [INF] Validation headers generated. ETag: Strong, "3A72E322DA17703C4D6248FF6B47661F". Last-Modified: Thu, 04 Nov 2021 10:49:21 GMT
+2021-11-04 12:49:21.611 +02:00 [INF] Generating Vary header.
+2021-11-04 12:49:21.611 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 12:49:21.612 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 12:49:21.612 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=1 - - - 200 391 application/json;+charset=utf-8 7.1034ms
+2021-11-04 12:50:04.640 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:44379/api/RequestEvent/1 - -
+2021-11-04 12:50:04.641 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 12:50:04.641 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 12:50:04.641 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 12:50:04.641 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 12:50:04.641 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 12:50:04.641 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 12:50:04.643 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestEventController.GetRequestEvent (Minly)'
+2021-11-04 12:50:04.658 +02:00 [INF] Route matched with {action = "GetRequestEvent", controller = "RequestEvent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRequestEvent(Int32) on controller Minly.Controllers.RequestEventController (Minly).
+2021-11-04 12:50:04.660 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 12:50:04.686 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[EventId], [r].[Price], [r].[Status], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [e].[Id], [e].[Date], [e].[Description], [e].[Description_ar], [e].[EventTypeId], [e].[Image], [e].[Name], [e].[Name_ar], [e].[Rate], [e].[Status]
+FROM [RequestEvents] AS [r]
+LEFT JOIN [AspNetUsers] AS [a] ON [r].[ApiUserId] = [a].[Id]
+INNER JOIN [Events] AS [e] ON [r].[EventId] = [e].[Id]
+WHERE [r].[Id] = @__id_0
+2021-11-04 12:50:04.692 +02:00 [INF] Executing OkObjectResult, writing value of type 'Minly.Core.DTOs.RequestEventDTO'.
+2021-11-04 12:50:04.706 +02:00 [INF] Executed action Minly.Controllers.RequestEventController.GetRequestEvent (Minly) in 47.8328ms
+2021-11-04 12:50:04.706 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestEventController.GetRequestEvent (Minly)'
+2021-11-04 12:50:04.706 +02:00 [INF] Generating expiration headers.
+2021-11-04 12:50:04.706 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 10:52:04 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 12:50:04.706 +02:00 [INF] Generating Validation headers.
+2021-11-04 12:50:04.707 +02:00 [INF] Validation headers generated. ETag: Strong, "B5127B5F0979AAD9543C1F34CA8B2171". Last-Modified: Thu, 04 Nov 2021 10:50:04 GMT
+2021-11-04 12:50:04.707 +02:00 [INF] Generating Vary header.
+2021-11-04 12:50:04.707 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 12:50:04.707 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 12:50:04.708 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:44379/api/RequestEvent/1 - - - 200 1072 application/json;+charset=utf-8 67.4250ms
+2021-11-04 13:27:45.583 +02:00 [INF] Application Is Starting
+2021-11-04 13:27:49.730 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 13:27:50.953 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 13:27:50.953 +02:00 [INF] Hosting environment: Development
+2021-11-04 13:27:50.953 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 13:27:51.042 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 13:27:51.246 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 207.2117ms
+2021-11-04 13:27:51.712 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 13:27:51.866 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 153.6272ms
+2021-11-04 15:28:04.619 +02:00 [INF] Application Is Starting
+2021-11-04 15:28:06.828 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 15:28:07.407 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 15:28:07.407 +02:00 [INF] Hosting environment: Development
+2021-11-04 15:28:07.407 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 15:28:07.479 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 15:28:07.660 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 182.9631ms
+2021-11-04 15:28:07.963 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 15:28:08.157 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 194.8196ms
+2021-11-04 15:28:34.704 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/login application/json-patch+json 48
+2021-11-04 15:28:34.722 +02:00 [INF] CORS policy execution successful.
+2021-11-04 15:28:34.760 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 15:28:34.765 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 15:28:34.765 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 15:28:34.769 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 15:28:34.769 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 15:28:34.769 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 15:28:35.516 +02:00 [INF] Executing endpoint 'Minly.Controllers.AccountController.Login (Minly)'
+2021-11-04 15:28:35.583 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Minly.Core.DTOs.LoginUserDTO) on controller Minly.Controllers.AccountController (Minly).
+2021-11-04 15:28:36.808 +02:00 [INF] Login Attempt for user@example.com 
+2021-11-04 15:28:38.248 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 15:28:39.841 +02:00 [INF] Executed DbCommand (196ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 15:28:40.033 +02:00 [WRN] Invalid password for user.
+2021-11-04 15:28:40.045 +02:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-11-04 15:28:40.107 +02:00 [INF] Executed action Minly.Controllers.AccountController.Login (Minly) in 4514.7559ms
+2021-11-04 15:28:40.108 +02:00 [INF] Executed endpoint 'Minly.Controllers.AccountController.Login (Minly)'
+2021-11-04 15:28:40.113 +02:00 [INF] Generating expiration headers.
+2021-11-04 15:28:40.115 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 13:30:40 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 15:28:40.117 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 15:28:40.117 +02:00 [INF] Generating Vary header.
+2021-11-04 15:28:40.117 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 15:28:40.139 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/login application/json-patch+json 48 - 401 83 application/json;+charset=utf-8 5434.8206ms
+2021-11-04 15:33:11.336 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/login application/json 59
+2021-11-04 15:33:11.340 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 15:33:11.340 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 15:33:11.341 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 15:33:11.341 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 15:33:11.341 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 15:33:11.341 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 15:33:11.354 +02:00 [INF] Executing endpoint 'Minly.Controllers.AccountController.Login (Minly)'
+2021-11-04 15:33:11.354 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Minly.Core.DTOs.LoginUserDTO) on controller Minly.Controllers.AccountController (Minly).
+2021-11-04 15:33:11.356 +02:00 [INF] Login Attempt for user@example.com 
+2021-11-04 15:33:11.390 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 15:33:11.402 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 15:33:11.811 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-11-04 15:33:12.108 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 15:33:12.120 +02:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Minly.Data.ApiUser, Minly.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 15:33:12.132 +02:00 [INF] Executed action Minly.Controllers.AccountController.Login (Minly) in 776.9104ms
+2021-11-04 15:33:12.132 +02:00 [INF] Executed endpoint 'Minly.Controllers.AccountController.Login (Minly)'
+2021-11-04 15:33:12.132 +02:00 [INF] Generating expiration headers.
+2021-11-04 15:33:12.132 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 13:35:12 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 15:33:12.132 +02:00 [INF] Generating Validation headers.
+2021-11-04 15:33:12.142 +02:00 [INF] Validation headers generated. ETag: Strong, "6DF3DDE80BA47A99840A042BD41B956E". Last-Modified: Thu, 04 Nov 2021 13:33:12 GMT
+2021-11-04 15:33:12.142 +02:00 [INF] Generating Vary header.
+2021-11-04 15:33:12.142 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 15:33:12.143 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/login application/json 59 - 202 849 application/json;+charset=utf-8 806.8187ms
+2021-11-04 22:39:47.634 +02:00 [INF] Application Is Starting
+2021-11-04 22:39:51.429 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 22:39:52.611 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 22:39:52.611 +02:00 [INF] Hosting environment: Development
+2021-11-04 22:39:52.612 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 22:39:52.688 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 22:39:52.932 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 248.5517ms
+2021-11-04 22:39:53.472 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 22:39:53.682 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 216.8906ms
+2021-11-04 22:42:11.118 +02:00 [INF] Application Is Starting
+2021-11-04 22:42:13.717 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 22:42:14.379 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 22:42:14.379 +02:00 [INF] Hosting environment: Development
+2021-11-04 22:42:14.379 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 22:42:14.432 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 22:42:14.590 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 155.4978ms
+2021-11-04 22:42:14.919 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 22:42:15.090 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/RequestEvent/{id}" for actions - Minly.Controllers.RequestEventController.RequestsOfEvent (Minly),Minly.Controllers.RequestEventController.GetRequestEvent (Minly). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-11-04 22:42:15.219 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 500 - text/plain 300.1837ms
+2021-11-04 22:43:11.424 +02:00 [INF] Application Is Starting
+2021-11-04 22:43:14.103 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 22:43:15.230 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 22:43:15.230 +02:00 [INF] Hosting environment: Development
+2021-11-04 22:43:15.230 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 22:43:15.298 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 22:43:15.556 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 264.5420ms
+2021-11-04 22:43:16.097 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 22:43:16.328 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 231.2227ms
+2021-11-04 22:49:31.395 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestEvent/RequestsOfEvent?id=4 - -
+2021-11-04 22:49:31.416 +02:00 [INF] No cached response available for this request.
+2021-11-04 22:49:31.454 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 22:49:31.462 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 22:49:31.462 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 22:49:31.464 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 22:49:31.464 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 22:49:31.464 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 22:49:32.382 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestEventController.RequestsOfEvent (Minly)'
+2021-11-04 22:49:32.421 +02:00 [INF] Route matched with {action = "RequestsOfEvent", controller = "RequestEvent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfEvent(Int32) on controller Minly.Controllers.RequestEventController (Minly).
+2021-11-04 22:49:37.380 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 22:49:38.530 +02:00 [INF] Executed DbCommand (68ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[EventId], [r].[Price], [r].[Status], [e].[Id], [e].[Date], [e].[Description], [e].[Description_ar], [e].[EventTypeId], [e].[Image], [e].[Name], [e].[Name_ar], [e].[Rate], [e].[Status]
+FROM [RequestEvents] AS [r]
+INNER JOIN [Events] AS [e] ON [r].[EventId] = [e].[Id]
+WHERE [r].[EventId] = @__id_0
+2021-11-04 22:49:38.598 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestEventDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 22:49:38.823 +02:00 [INF] Executed action Minly.Controllers.RequestEventController.RequestsOfEvent (Minly) in 6397.2655ms
+2021-11-04 22:49:38.826 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestEventController.RequestsOfEvent (Minly)'
+2021-11-04 22:49:38.832 +02:00 [INF] Generating expiration headers.
+2021-11-04 22:49:38.834 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 20:51:38 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 22:49:38.836 +02:00 [INF] Generating Validation headers.
+2021-11-04 22:49:38.847 +02:00 [INF] Validation headers generated. ETag: Strong, "D249826A3F8CA4A3047E8BBC828BAFCB". Last-Modified: Thu, 04 Nov 2021 20:49:38 GMT
+2021-11-04 22:49:38.847 +02:00 [INF] Generating Vary header.
+2021-11-04 22:49:38.847 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 22:49:38.865 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 22:49:38.872 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestEvent/RequestsOfEvent?id=4 - - - 200 464 application/json;+charset=utf-8 7477.1367ms
+2021-11-04 22:52:15.305 +02:00 [INF] Application Is Starting
+2021-11-04 22:52:17.847 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 22:52:18.718 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 22:52:18.718 +02:00 [INF] Hosting environment: Development
+2021-11-04 22:52:18.718 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 22:52:18.752 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 22:52:18.913 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 162.9187ms
+2021-11-04 22:52:19.068 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/_framework/aspnetcore-browser-refresh.js - -
+2021-11-04 22:52:19.070 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/_framework/aspnetcore-browser-refresh.js - - - 200 3080 application/javascript;+charset=utf-8 2.1491ms
+2021-11-04 22:52:19.233 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 22:52:19.419 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 186.4207ms
+2021-11-04 22:52:33.371 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestEvent/RequestsOfEvent?id=4 - -
+2021-11-04 22:52:33.390 +02:00 [INF] No cached response available for this request.
+2021-11-04 22:52:33.423 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 22:52:33.432 +02:00 [INF] No saved response found in store.
+2021-11-04 22:52:33.432 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 22:52:33.434 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 22:52:33.434 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 22:52:33.434 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 22:52:33.916 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestEventController.RequestsOfEvent (Minly)'
+2021-11-04 22:52:33.948 +02:00 [INF] Route matched with {action = "RequestsOfEvent", controller = "RequestEvent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfEvent(Int32) on controller Minly.Controllers.RequestEventController (Minly).
+2021-11-04 22:52:36.092 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 22:52:37.642 +02:00 [INF] Executed DbCommand (57ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[EventId], [r].[Price], [r].[Status], [e].[Id], [e].[Date], [e].[Description], [e].[Description_ar], [e].[EventTypeId], [e].[Image], [e].[Name], [e].[Name_ar], [e].[Rate], [e].[Status]
+FROM [RequestEvents] AS [r]
+INNER JOIN [Events] AS [e] ON [r].[EventId] = [e].[Id]
+WHERE [r].[EventId] = @__id_0
+2021-11-04 22:52:37.723 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestEventDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 22:52:37.886 +02:00 [INF] Executed action Minly.Controllers.RequestEventController.RequestsOfEvent (Minly) in 3933.6394ms
+2021-11-04 22:52:37.887 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestEventController.RequestsOfEvent (Minly)'
+2021-11-04 22:52:37.891 +02:00 [INF] Generating expiration headers.
+2021-11-04 22:52:37.891 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 20:54:37 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 22:52:37.893 +02:00 [INF] Generating Validation headers.
+2021-11-04 22:52:37.895 +02:00 [INF] Validation headers generated. ETag: Strong, "D249826A3F8CA4A3047E8BBC828BAFCB". Last-Modified: Thu, 04 Nov 2021 20:52:37 GMT
+2021-11-04 22:52:37.895 +02:00 [INF] Generating Vary header.
+2021-11-04 22:52:37.895 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 22:52:37.913 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 22:52:37.920 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestEvent/RequestsOfEvent?id=4 - - - 200 464 application/json;+charset=utf-8 4549.2821ms
+2021-11-04 22:52:51.738 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestEvent/RequestsOfEventStillNotDone?id=4 - -
+2021-11-04 22:52:51.739 +02:00 [INF] No cached response available for this request.
+2021-11-04 22:52:51.739 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 22:52:51.739 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 22:52:51.739 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 22:52:51.739 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 22:52:51.740 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 22:52:51.740 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 22:52:51.747 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestEventController.RequestsOfEventStillNotDone (Minly)'
+2021-11-04 22:52:51.751 +02:00 [INF] Route matched with {action = "RequestsOfEventStillNotDone", controller = "RequestEvent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfEventStillNotDone(Int32) on controller Minly.Controllers.RequestEventController (Minly).
+2021-11-04 22:52:51.782 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 22:52:51.804 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[EventId], [r].[Price], [r].[Status], [e].[Id], [e].[Date], [e].[Description], [e].[Description_ar], [e].[EventTypeId], [e].[Image], [e].[Name], [e].[Name_ar], [e].[Rate], [e].[Status]
+FROM [RequestEvents] AS [r]
+INNER JOIN [Events] AS [e] ON [r].[EventId] = [e].[Id]
+WHERE ([r].[EventId] = @__id_0) AND ([r].[Status] <> CAST(1 AS bit))
+2021-11-04 22:52:51.805 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestEventDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 22:52:51.805 +02:00 [INF] Executed action Minly.Controllers.RequestEventController.RequestsOfEventStillNotDone (Minly) in 54.2585ms
+2021-11-04 22:52:51.805 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestEventController.RequestsOfEventStillNotDone (Minly)'
+2021-11-04 22:52:51.805 +02:00 [INF] Generating expiration headers.
+2021-11-04 22:52:51.805 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 20:54:51 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 22:52:51.805 +02:00 [INF] Generating Validation headers.
+2021-11-04 22:52:51.805 +02:00 [INF] Validation headers generated. ETag: Strong, "C63FCDF1FFA8BB11D89DD6040BA74D72". Last-Modified: Thu, 04 Nov 2021 20:52:51 GMT
+2021-11-04 22:52:51.805 +02:00 [INF] Generating Vary header.
+2021-11-04 22:52:51.806 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 22:52:51.806 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 22:52:51.806 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestEvent/RequestsOfEventStillNotDone?id=4 - - - 200 464 application/json;+charset=utf-8 67.8851ms
+2021-11-04 22:53:03.628 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestEvent/RequestsOfEventDone?id=4 - -
+2021-11-04 22:53:03.628 +02:00 [INF] No cached response available for this request.
+2021-11-04 22:53:03.629 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 22:53:03.629 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 22:53:03.629 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 22:53:03.629 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 22:53:03.629 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 22:53:03.629 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 22:53:03.632 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestEventController.RequestsOfEventDone (Minly)'
+2021-11-04 22:53:03.637 +02:00 [INF] Route matched with {action = "RequestsOfEventDone", controller = "RequestEvent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfEventDone(Int32) on controller Minly.Controllers.RequestEventController (Minly).
+2021-11-04 22:53:03.654 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 22:53:03.663 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[EventId], [r].[Price], [r].[Status], [e].[Id], [e].[Date], [e].[Description], [e].[Description_ar], [e].[EventTypeId], [e].[Image], [e].[Name], [e].[Name_ar], [e].[Rate], [e].[Status]
+FROM [RequestEvents] AS [r]
+INNER JOIN [Events] AS [e] ON [r].[EventId] = [e].[Id]
+WHERE ([r].[EventId] = @__id_0) AND ([r].[Status] = CAST(1 AS bit))
+2021-11-04 22:53:03.664 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestEventDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 22:53:03.664 +02:00 [INF] Executed action Minly.Controllers.RequestEventController.RequestsOfEventDone (Minly) in 26.9788ms
+2021-11-04 22:53:03.664 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestEventController.RequestsOfEventDone (Minly)'
+2021-11-04 22:53:03.664 +02:00 [INF] Generating expiration headers.
+2021-11-04 22:53:03.664 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 20:55:03 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 22:53:03.664 +02:00 [INF] Generating Validation headers.
+2021-11-04 22:53:03.664 +02:00 [INF] Validation headers generated. ETag: Strong, "9A0A3EAFA5B0227C02379C22EBDFE2A1". Last-Modified: Thu, 04 Nov 2021 20:53:03 GMT
+2021-11-04 22:53:03.664 +02:00 [INF] Generating Vary header.
+2021-11-04 22:53:03.664 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 22:53:03.664 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 22:53:03.665 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestEvent/RequestsOfEventDone?id=4 - - - 200 2 application/json;+charset=utf-8 36.9841ms
+2021-11-04 22:54:27.612 +02:00 [INF] Application Is Starting
+2021-11-04 22:54:29.727 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 22:54:30.574 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 22:54:30.574 +02:00 [INF] Hosting environment: Development
+2021-11-04 22:54:30.574 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 22:54:30.618 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 22:54:30.818 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 203.2289ms
+2021-11-04 22:54:31.223 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/_framework/aspnetcore-browser-refresh.js - -
+2021-11-04 22:54:31.227 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/_framework/aspnetcore-browser-refresh.js - - - 200 3080 application/javascript;+charset=utf-8 4.5775ms
+2021-11-04 22:54:31.681 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 22:54:31.861 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 179.2987ms
+2021-11-04 22:59:44.229 +02:00 [INF] Application Is Starting
+2021-11-04 22:59:45.967 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 22:59:46.585 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 22:59:46.585 +02:00 [INF] Hosting environment: Development
+2021-11-04 22:59:46.585 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 22:59:46.641 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 22:59:46.800 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 163.1761ms
+2021-11-04 22:59:46.902 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/_framework/aspnetcore-browser-refresh.js - -
+2021-11-04 22:59:46.904 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/_framework/aspnetcore-browser-refresh.js - - - 200 3080 application/javascript;+charset=utf-8 2.2193ms
+2021-11-04 22:59:47.059 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 22:59:47.231 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 172.2152ms
+2021-11-04 22:59:58.237 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44379/api/RequestStar/1 - 0
+2021-11-04 22:59:58.244 +02:00 [INF] CORS policy execution successful.
+2021-11-04 22:59:58.252 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 22:59:58.253 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 22:59:58.253 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 22:59:58.254 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 22:59:58.259 +02:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-11-04 22:59:58.259 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 22:59:58.659 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-11-04 22:59:58.662 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-11-04 22:59:58.664 +02:00 [INF] Generating expiration headers.
+2021-11-04 22:59:58.664 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:01:58 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 22:59:58.666 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 22:59:58.666 +02:00 [INF] Generating Vary header.
+2021-11-04 22:59:58.666 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 22:59:58.668 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44379/api/RequestStar/1 - 0 - 401 - - 431.9948ms
+2021-11-04 23:00:15.222 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44379/api/RequestStar/1 - 0
+2021-11-04 23:00:15.222 +02:00 [INF] CORS policy execution successful.
+2021-11-04 23:00:15.222 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:00:15.223 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:00:15.223 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:00:15.223 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:00:15.223 +02:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-11-04 23:00:15.223 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:00:15.230 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-11-04 23:00:15.231 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-11-04 23:00:15.231 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:00:15.231 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:02:15 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:00:15.231 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:00:15.231 +02:00 [INF] Generating Vary header.
+2021-11-04 23:00:15.231 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:00:15.231 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44379/api/RequestStar/1 - 0 - 401 - - 9.3420ms
+2021-11-04 23:00:34.179 +02:00 [INF] Application Is Starting
+2021-11-04 23:00:36.230 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 23:00:36.912 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 23:00:36.912 +02:00 [INF] Hosting environment: Development
+2021-11-04 23:00:36.912 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 23:00:36.967 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 23:00:37.174 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 205.9859ms
+2021-11-04 23:00:37.582 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 23:00:37.793 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 210.1915ms
+2021-11-04 23:01:15.321 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44379/api/RequestStar/3 - 0
+2021-11-04 23:01:15.327 +02:00 [INF] CORS policy execution successful.
+2021-11-04 23:01:15.349 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:01:15.350 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:01:15.350 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:01:15.351 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:01:15.353 +02:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-11-04 23:01:15.353 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:01:15.524 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-11-04 23:01:15.528 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-11-04 23:01:15.530 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:01:15.531 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:03:15 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:01:15.533 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:01:15.533 +02:00 [INF] Generating Vary header.
+2021-11-04 23:01:15.533 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:01:15.537 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44379/api/RequestStar/3 - 0 - 401 - - 248.9294ms
+2021-11-04 23:01:19.380 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44379/api/RequestStar/3 - 0
+2021-11-04 23:01:19.381 +02:00 [INF] CORS policy execution successful.
+2021-11-04 23:01:19.381 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:01:19.381 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:01:19.381 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:01:19.381 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:01:19.381 +02:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-11-04 23:01:19.381 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:01:19.383 +02:00 [INF] Request put:/api/requeststar/3 from IP ::1 has been blocked, quota 1/5s exceeded by 1. Blocked by rule *, TraceIdentifier 80000006-0002-fc00-b63f-84710c7967bb.
+2021-11-04 23:01:19.388 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:01:19.389 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:03:19 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:01:19.389 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:01:19.389 +02:00 [INF] Generating Vary header.
+2021-11-04 23:01:19.389 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:01:19.402 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44379/api/RequestStar/3 - 0 - 429 - text/plain 21.3328ms
+2021-11-04 23:02:23.469 +02:00 [INF] Application Is Starting
+2021-11-04 23:02:26.928 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 23:02:27.581 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 23:02:27.581 +02:00 [INF] Hosting environment: Development
+2021-11-04 23:02:27.581 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 23:02:27.631 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 23:02:27.783 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 154.3018ms
+2021-11-04 23:02:28.089 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 23:02:28.237 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - Minly.Controllers.RequestStarController.UpdateRequestStar (Minly). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-11-04 23:02:28.293 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 500 - text/plain 204.6508ms
+2021-11-04 23:03:04.243 +02:00 [INF] Application Is Starting
+2021-11-04 23:03:07.747 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 23:03:08.588 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 23:03:08.589 +02:00 [INF] Hosting environment: Development
+2021-11-04 23:03:08.589 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 23:03:08.661 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 23:03:08.863 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 205.3204ms
+2021-11-04 23:03:09.210 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 23:03:09.404 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 194.1695ms
+2021-11-04 23:03:18.648 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44379/api/RequestStar/UpdateRequestStar?id=1 - 0
+2021-11-04 23:03:18.661 +02:00 [INF] CORS policy execution successful.
+2021-11-04 23:03:18.691 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:03:18.691 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:03:18.691 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:03:18.693 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:03:18.695 +02:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-11-04 23:03:18.695 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:03:19.384 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-11-04 23:03:19.388 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-11-04 23:03:19.390 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:03:19.392 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:05:19 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:03:19.393 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:03:19.393 +02:00 [INF] Generating Vary header.
+2021-11-04 23:03:19.394 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:03:19.396 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44379/api/RequestStar/UpdateRequestStar?id=1 - 0 - 401 - - 748.8294ms
+2021-11-04 23:03:26.984 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44379/api/RequestStar/UpdateRequestStar?id=4 - 0
+2021-11-04 23:03:26.985 +02:00 [INF] CORS policy execution successful.
+2021-11-04 23:03:26.985 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:03:26.985 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:03:26.985 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:03:26.985 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:03:26.985 +02:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-11-04 23:03:26.985 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:03:26.994 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-11-04 23:03:26.994 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-11-04 23:03:26.994 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:03:26.994 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:05:26 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:03:26.994 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:03:26.994 +02:00 [INF] Generating Vary header.
+2021-11-04 23:03:26.994 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:03:26.996 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44379/api/RequestStar/UpdateRequestStar?id=4 - 0 - 401 - - 11.3247ms
+2021-11-04 23:04:40.388 +02:00 [INF] Application Is Starting
+2021-11-04 23:04:44.804 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 23:04:46.320 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 23:04:46.320 +02:00 [INF] Hosting environment: Development
+2021-11-04 23:04:46.320 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 23:04:46.596 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 23:04:46.845 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 272.1331ms
+2021-11-04 23:04:47.367 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 23:04:47.577 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 210.0324ms
+2021-11-04 23:05:14.852 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/login application/json 59
+2021-11-04 23:05:14.874 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:05:14.875 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:05:14.875 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:05:14.876 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:05:14.877 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:05:14.877 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:05:15.415 +02:00 [INF] Executing endpoint 'Minly.Controllers.AccountController.Login (Minly)'
+2021-11-04 23:05:15.475 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Minly.Core.DTOs.LoginUserDTO) on controller Minly.Controllers.AccountController (Minly).
+2021-11-04 23:05:16.478 +02:00 [INF] Login Attempt for user@example.com 
+2021-11-04 23:05:17.471 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:05:18.810 +02:00 [INF] Executed DbCommand (66ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 23:05:19.041 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-11-04 23:05:19.287 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 23:05:19.307 +02:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Minly.Data.ApiUser, Minly.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 23:05:19.376 +02:00 [INF] Executed action Minly.Controllers.AccountController.Login (Minly) in 3896.6322ms
+2021-11-04 23:05:19.377 +02:00 [INF] Executed endpoint 'Minly.Controllers.AccountController.Login (Minly)'
+2021-11-04 23:05:19.380 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:05:19.382 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:07:19 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:05:19.384 +02:00 [INF] Generating Validation headers.
+2021-11-04 23:05:19.393 +02:00 [INF] Validation headers generated. ETag: Strong, "CC3602C363745F7E2A20CDE5AF7E51FB". Last-Modified: Thu, 04 Nov 2021 21:05:19 GMT
+2021-11-04 23:05:19.394 +02:00 [INF] Generating Vary header.
+2021-11-04 23:05:19.394 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:05:19.414 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/login application/json 59 - 202 849 application/json;+charset=utf-8 4564.8577ms
+2021-11-04 23:05:22.945 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/login application/json 59
+2021-11-04 23:05:22.945 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:05:22.945 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:05:22.945 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:05:22.945 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:05:22.945 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:05:22.945 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:05:22.948 +02:00 [INF] Executing endpoint 'Minly.Controllers.AccountController.Login (Minly)'
+2021-11-04 23:05:22.949 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Minly.Core.DTOs.LoginUserDTO) on controller Minly.Controllers.AccountController (Minly).
+2021-11-04 23:05:22.950 +02:00 [INF] Login Attempt for user@example.com 
+2021-11-04 23:05:22.984 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:05:22.988 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 23:05:23.001 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-11-04 23:05:23.003 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 23:05:23.014 +02:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Minly.Data.ApiUser, Minly.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 23:05:23.014 +02:00 [INF] Executed action Minly.Controllers.AccountController.Login (Minly) in 65.4916ms
+2021-11-04 23:05:23.014 +02:00 [INF] Executed endpoint 'Minly.Controllers.AccountController.Login (Minly)'
+2021-11-04 23:05:23.014 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:05:23.014 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:07:23 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:05:23.015 +02:00 [INF] Generating Validation headers.
+2021-11-04 23:05:23.015 +02:00 [INF] Validation headers generated. ETag: Strong, "FB309C147EAFF13F06DE80CBFE88A49E". Last-Modified: Thu, 04 Nov 2021 21:05:23 GMT
+2021-11-04 23:05:23.015 +02:00 [INF] Generating Vary header.
+2021-11-04 23:05:23.015 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:05:23.015 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/login application/json 59 - 202 849 application/json;+charset=utf-8 70.4839ms
+2021-11-04 23:05:24.276 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/login application/json 59
+2021-11-04 23:05:24.277 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:05:24.277 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:05:24.277 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:05:24.277 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:05:24.277 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:05:24.277 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:05:24.279 +02:00 [INF] Request post:/api/account/login from IP ::1 has been blocked, quota 1/5s exceeded by 1. Blocked by rule *, TraceIdentifier 8000000e-0002-fb00-b63f-84710c7967bb.
+2021-11-04 23:05:24.280 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:05:24.280 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:07:24 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:05:24.280 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:05:24.280 +02:00 [INF] Generating Vary header.
+2021-11-04 23:05:24.280 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:05:24.282 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/login application/json 59 - 429 - text/plain 6.3534ms
+2021-11-04 23:05:25.589 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/login application/json 59
+2021-11-04 23:05:25.589 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:05:25.589 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:05:25.590 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:05:25.590 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:05:25.590 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:05:25.590 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:05:25.590 +02:00 [INF] Request post:/api/account/login from IP ::1 has been blocked, quota 1/5s exceeded by 2. Blocked by rule *, TraceIdentifier 80000014-0000-fe00-b63f-84710c7967bb.
+2021-11-04 23:05:25.590 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:05:25.590 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:07:25 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:05:25.590 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:05:25.590 +02:00 [INF] Generating Vary header.
+2021-11-04 23:05:25.590 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:05:25.591 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/login application/json 59 - 429 - text/plain 1.8216ms
+2021-11-04 23:05:26.415 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/login application/json 59
+2021-11-04 23:05:26.415 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:05:26.415 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:05:26.415 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:05:26.415 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:05:26.415 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:05:26.415 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:05:26.416 +02:00 [INF] Request post:/api/account/login from IP ::1 has been blocked, quota 1/5s exceeded by 3. Blocked by rule *, TraceIdentifier 80000011-0003-fd00-b63f-84710c7967bb.
+2021-11-04 23:05:26.416 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:05:26.416 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:07:26 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:05:26.416 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:05:26.416 +02:00 [INF] Generating Vary header.
+2021-11-04 23:05:26.416 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:05:26.416 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/login application/json 59 - 429 - text/plain 1.1370ms
+2021-11-04 23:05:28.033 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/login application/json 59
+2021-11-04 23:05:28.033 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:05:28.033 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:05:28.033 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:05:28.033 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:05:28.033 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:05:28.033 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:05:28.036 +02:00 [INF] Executing endpoint 'Minly.Controllers.AccountController.Login (Minly)'
+2021-11-04 23:05:28.036 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Minly.Core.DTOs.LoginUserDTO) on controller Minly.Controllers.AccountController (Minly).
+2021-11-04 23:05:28.078 +02:00 [INF] Login Attempt for user@example.com 
+2021-11-04 23:05:28.088 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:05:28.093 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 23:05:28.108 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-11-04 23:05:28.109 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 23:05:28.123 +02:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Minly.Data.ApiUser, Minly.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 23:05:28.123 +02:00 [INF] Executed action Minly.Controllers.AccountController.Login (Minly) in 86.6919ms
+2021-11-04 23:05:28.123 +02:00 [INF] Executed endpoint 'Minly.Controllers.AccountController.Login (Minly)'
+2021-11-04 23:05:28.123 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:05:28.123 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:07:28 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:05:28.123 +02:00 [INF] Generating Validation headers.
+2021-11-04 23:05:28.123 +02:00 [INF] Validation headers generated. ETag: Strong, "EF9E781C8D1F205D2396EFC9A4CF57CE". Last-Modified: Thu, 04 Nov 2021 21:05:28 GMT
+2021-11-04 23:05:28.123 +02:00 [INF] Generating Vary header.
+2021-11-04 23:05:28.123 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:05:28.124 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/login application/json 59 - 202 849 application/json;+charset=utf-8 91.2120ms
+2021-11-04 23:06:33.253 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44379/api/RequestStar/EditRequestStar?id=3 - 0
+2021-11-04 23:06:33.260 +02:00 [INF] CORS policy execution successful.
+2021-11-04 23:06:33.260 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:06:33.260 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:06:33.260 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:06:33.260 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:06:33.264 +02:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-11-04 23:06:33.264 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:06:33.276 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-11-04 23:06:33.282 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-11-04 23:06:33.282 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:06:33.282 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:08:33 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:06:33.282 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:06:33.282 +02:00 [INF] Generating Vary header.
+2021-11-04 23:06:33.282 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:06:33.284 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44379/api/RequestStar/EditRequestStar?id=3 - 0 - 401 - - 30.9746ms
+2021-11-04 23:07:11.614 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44379/api/RequestStar/EditRequestStar?id=3 - 0
+2021-11-04 23:07:11.615 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:07:11.615 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:07:11.615 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:07:11.615 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:07:11.615 +02:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-11-04 23:07:11.615 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:07:11.621 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-11-04 23:07:11.625 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-11-04 23:07:11.625 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:07:11.625 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:09:11 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:07:11.625 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:07:11.625 +02:00 [INF] Generating Vary header.
+2021-11-04 23:07:11.625 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:07:11.626 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44379/api/RequestStar/EditRequestStar?id=3 - 0 - 401 - - 11.5159ms
+2021-11-04 23:07:35.392 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44379/api/RequestStar/EditRequestStar?id=3 - 0
+2021-11-04 23:07:35.392 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:07:35.392 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:07:35.392 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:07:35.392 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:07:35.393 +02:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-11-04 23:07:35.393 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:07:35.789 +02:00 [INF] Successfully validated the token.
+2021-11-04 23:07:35.791 +02:00 [INF] Authorization was successful.
+2021-11-04 23:07:35.791 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestStarController.EditRequestStar (Minly)'
+2021-11-04 23:07:35.801 +02:00 [INF] Route matched with {action = "EditRequestStar", controller = "RequestStar"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] EditRequestStar(Int32) on controller Minly.Controllers.RequestStarController (Minly).
+2021-11-04 23:08:29.326 +02:00 [INF] Application Is Starting
+2021-11-04 23:08:32.504 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-04 23:08:33.496 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-04 23:08:33.496 +02:00 [INF] Hosting environment: Development
+2021-11-04 23:08:33.496 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-04 23:08:33.567 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-04 23:08:33.567 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44379/api/RequestStar/AcceptRequestStar?id=3 - 0
+2021-11-04 23:08:33.617 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:08:33.617 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:08:33.618 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:08:33.621 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:08:33.623 +02:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-11-04 23:08:33.623 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:08:33.758 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 195.7451ms
+2021-11-04 23:08:34.329 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-04 23:08:34.668 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 339.2373ms
+2021-11-04 23:08:34.777 +02:00 [INF] Successfully validated the token.
+2021-11-04 23:08:34.786 +02:00 [INF] Authorization was successful.
+2021-11-04 23:08:34.788 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestStarController.AcceptRequestStar (Minly)'
+2021-11-04 23:08:34.850 +02:00 [INF] Route matched with {action = "AcceptRequestStar", controller = "RequestStar"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AcceptRequestStar(Int32) on controller Minly.Controllers.RequestStarController (Minly).
+2021-11-04 23:08:41.841 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:08:47.810 +02:00 [INF] Executed DbCommand (49ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[Price], [r].[StarId], [r].[Status]
+FROM [RequestStars] AS [r]
+WHERE [r].[Id] = @__id_0
+2021-11-04 23:09:09.205 +02:00 [INF] Executed DbCommand (39ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (Size = 450), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Double), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [RequestStars] SET [ApiUserId] = @p0, [DateCreated] = @p1, [Price] = @p2, [StarId] = @p3, [Status] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+2021-11-04 23:09:16.101 +02:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+2021-11-04 23:09:16.106 +02:00 [INF] Executed action Minly.Controllers.RequestStarController.AcceptRequestStar (Minly) in 41251.0508ms
+2021-11-04 23:09:16.107 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestStarController.AcceptRequestStar (Minly)'
+2021-11-04 23:09:16.111 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:09:16.113 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:11:16 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:09:16.116 +02:00 [INF] Generating Validation headers.
+2021-11-04 23:09:16.125 +02:00 [INF] Validation headers generated. ETag: Strong, "9381077EB510CF2747DEF22990F2B4D8". Last-Modified: Thu, 04 Nov 2021 21:09:16 GMT
+2021-11-04 23:09:16.125 +02:00 [INF] Generating Vary header.
+2021-11-04 23:09:16.125 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:09:16.136 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44379/api/RequestStar/AcceptRequestStar?id=3 - 0 - 204 - - 42574.9019ms
+2021-11-04 23:10:39.420 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=1 - -
+2021-11-04 23:10:39.440 +02:00 [INF] No cached response available for this request.
+2021-11-04 23:10:39.441 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:10:39.441 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 23:10:39.441 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:10:39.441 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:10:39.441 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:10:39.441 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:10:39.446 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestStarController.RequestsOfStar (Minly)'
+2021-11-04 23:10:39.450 +02:00 [INF] Route matched with {action = "RequestsOfStar", controller = "RequestStar"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfStar(Int32) on controller Minly.Controllers.RequestStarController (Minly).
+2021-11-04 23:10:39.489 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:10:39.559 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[Price], [r].[StarId], [r].[Status], [s].[Id], [s].[Description], [s].[Description_ar], [s].[Image], [s].[Name], [s].[Name_ar], [s].[Rate], [s].[ResponseTime]
+FROM [RequestStars] AS [r]
+INNER JOIN [Stars] AS [s] ON [r].[StarId] = [s].[Id]
+WHERE [r].[StarId] = @__id_0
+2021-11-04 23:10:39.588 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestStarDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 23:10:39.725 +02:00 [INF] Executed action Minly.Controllers.RequestStarController.RequestsOfStar (Minly) in 274.8533ms
+2021-11-04 23:10:39.725 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestStarController.RequestsOfStar (Minly)'
+2021-11-04 23:10:39.725 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:10:39.725 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:12:39 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:10:39.725 +02:00 [INF] Generating Validation headers.
+2021-11-04 23:10:39.725 +02:00 [INF] Validation headers generated. ETag: Strong, "5804AA506108BC66C214579D890A0D7E". Last-Modified: Thu, 04 Nov 2021 21:10:39 GMT
+2021-11-04 23:10:39.725 +02:00 [INF] Generating Vary header.
+2021-11-04 23:10:39.725 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:10:39.731 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 23:10:39.731 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=1 - - - 200 390 application/json;+charset=utf-8 311.8642ms
+2021-11-04 23:10:55.017 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=1 - -
+2021-11-04 23:10:55.018 +02:00 [INF] No cached response available for this request.
+2021-11-04 23:10:55.019 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:10:55.019 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 23:10:55.019 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:10:55.019 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:10:55.019 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:10:55.019 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:10:55.020 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestStarController.RequestsOfStar (Minly)'
+2021-11-04 23:10:55.021 +02:00 [INF] Route matched with {action = "RequestsOfStar", controller = "RequestStar"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfStar(Int32) on controller Minly.Controllers.RequestStarController (Minly).
+2021-11-04 23:10:55.030 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:10:55.037 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[Price], [r].[StarId], [r].[Status], [s].[Id], [s].[Description], [s].[Description_ar], [s].[Image], [s].[Name], [s].[Name_ar], [s].[Rate], [s].[ResponseTime]
+FROM [RequestStars] AS [r]
+INNER JOIN [Stars] AS [s] ON [r].[StarId] = [s].[Id]
+WHERE [r].[StarId] = @__id_0
+2021-11-04 23:10:55.038 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestStarDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 23:10:55.039 +02:00 [INF] Executed action Minly.Controllers.RequestStarController.RequestsOfStar (Minly) in 17.742ms
+2021-11-04 23:10:55.039 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestStarController.RequestsOfStar (Minly)'
+2021-11-04 23:10:55.039 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:10:55.039 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:12:55 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:10:55.039 +02:00 [INF] Generating Validation headers.
+2021-11-04 23:10:55.039 +02:00 [INF] Validation headers generated. ETag: Strong, "D5E62451AEA6F73488E065A862CE94A7". Last-Modified: Thu, 04 Nov 2021 21:10:55 GMT
+2021-11-04 23:10:55.039 +02:00 [INF] Generating Vary header.
+2021-11-04 23:10:55.039 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:10:55.039 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 23:10:55.039 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfStar?id=1 - - - 200 390 application/json;+charset=utf-8 22.3791ms
+2021-11-04 23:11:33.541 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfStarStillNotDone?id=1 - -
+2021-11-04 23:11:33.542 +02:00 [INF] No cached response available for this request.
+2021-11-04 23:11:33.542 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:11:33.542 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 23:11:33.547 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:11:33.547 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:11:33.547 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:11:33.547 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:11:33.547 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestStarController.RequestsOfStarStillNotDone (Minly)'
+2021-11-04 23:11:33.550 +02:00 [INF] Route matched with {action = "RequestsOfStarStillNotDone", controller = "RequestStar"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfStarStillNotDone(Int32) on controller Minly.Controllers.RequestStarController (Minly).
+2021-11-04 23:11:33.552 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:11:33.569 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[Price], [r].[StarId], [r].[Status], [s].[Id], [s].[Description], [s].[Description_ar], [s].[Image], [s].[Name], [s].[Name_ar], [s].[Rate], [s].[ResponseTime]
+FROM [RequestStars] AS [r]
+INNER JOIN [Stars] AS [s] ON [r].[StarId] = [s].[Id]
+WHERE ([r].[StarId] = @__id_0) AND ([r].[Status] <> CAST(1 AS bit))
+2021-11-04 23:11:33.572 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestStarDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 23:11:33.572 +02:00 [INF] Executed action Minly.Controllers.RequestStarController.RequestsOfStarStillNotDone (Minly) in 21.7231ms
+2021-11-04 23:11:33.572 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestStarController.RequestsOfStarStillNotDone (Minly)'
+2021-11-04 23:11:33.572 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:11:33.572 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:13:33 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:11:33.572 +02:00 [INF] Generating Validation headers.
+2021-11-04 23:11:33.572 +02:00 [INF] Validation headers generated. ETag: Strong, "7BC5DF44988559EE78BD0EE1445A83A4". Last-Modified: Thu, 04 Nov 2021 21:11:33 GMT
+2021-11-04 23:11:33.572 +02:00 [INF] Generating Vary header.
+2021-11-04 23:11:33.573 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:11:33.573 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 23:11:33.574 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfStarStillNotDone?id=1 - - - 200 2 application/json;+charset=utf-8 33.0595ms
+2021-11-04 23:11:42.228 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfStarStillNotDone?id=1 - -
+2021-11-04 23:11:42.228 +02:00 [INF] No cached response available for this request.
+2021-11-04 23:11:42.228 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:11:42.228 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 23:11:42.228 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:11:42.229 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:11:42.229 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:11:42.229 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:11:42.229 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestStarController.RequestsOfStarStillNotDone (Minly)'
+2021-11-04 23:11:42.229 +02:00 [INF] Route matched with {action = "RequestsOfStarStillNotDone", controller = "RequestStar"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfStarStillNotDone(Int32) on controller Minly.Controllers.RequestStarController (Minly).
+2021-11-04 23:11:42.230 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:11:42.233 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[Price], [r].[StarId], [r].[Status], [s].[Id], [s].[Description], [s].[Description_ar], [s].[Image], [s].[Name], [s].[Name_ar], [s].[Rate], [s].[ResponseTime]
+FROM [RequestStars] AS [r]
+INNER JOIN [Stars] AS [s] ON [r].[StarId] = [s].[Id]
+WHERE ([r].[StarId] = @__id_0) AND ([r].[Status] <> CAST(1 AS bit))
+2021-11-04 23:11:42.234 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestStarDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 23:11:42.234 +02:00 [INF] Executed action Minly.Controllers.RequestStarController.RequestsOfStarStillNotDone (Minly) in 4.8843ms
+2021-11-04 23:11:42.234 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestStarController.RequestsOfStarStillNotDone (Minly)'
+2021-11-04 23:11:42.234 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:11:42.234 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:13:42 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:11:42.234 +02:00 [INF] Generating Validation headers.
+2021-11-04 23:11:42.234 +02:00 [INF] Validation headers generated. ETag: Strong, "441220C6A347A87CB55AC62F273D5E78". Last-Modified: Thu, 04 Nov 2021 21:11:42 GMT
+2021-11-04 23:11:42.234 +02:00 [INF] Generating Vary header.
+2021-11-04 23:11:42.234 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:11:42.235 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 23:11:42.235 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfStarStillNotDone?id=1 - - - 200 2 application/json;+charset=utf-8 7.2070ms
+2021-11-04 23:11:56.247 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfStarDone?id=1 - -
+2021-11-04 23:11:56.247 +02:00 [INF] No cached response available for this request.
+2021-11-04 23:11:56.247 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:11:56.248 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 23:11:56.248 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:11:56.248 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:11:56.248 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:11:56.248 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:11:56.248 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestStarController.RequestsOfStarDone (Minly)'
+2021-11-04 23:11:56.253 +02:00 [INF] Route matched with {action = "RequestsOfStarDone", controller = "RequestStar"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfStarDone(Int32) on controller Minly.Controllers.RequestStarController (Minly).
+2021-11-04 23:11:56.256 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:11:56.269 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[Price], [r].[StarId], [r].[Status], [s].[Id], [s].[Description], [s].[Description_ar], [s].[Image], [s].[Name], [s].[Name_ar], [s].[Rate], [s].[ResponseTime]
+FROM [RequestStars] AS [r]
+INNER JOIN [Stars] AS [s] ON [r].[StarId] = [s].[Id]
+WHERE ([r].[StarId] = @__id_0) AND ([r].[Status] = CAST(1 AS bit))
+2021-11-04 23:11:56.269 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestStarDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 23:11:56.269 +02:00 [INF] Executed action Minly.Controllers.RequestStarController.RequestsOfStarDone (Minly) in 16.0743ms
+2021-11-04 23:11:56.269 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestStarController.RequestsOfStarDone (Minly)'
+2021-11-04 23:11:56.269 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:11:56.269 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:13:56 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:11:56.269 +02:00 [INF] Generating Validation headers.
+2021-11-04 23:11:56.269 +02:00 [INF] Validation headers generated. ETag: Strong, "B0051DF3F8E434A18983AB8A420B96A7". Last-Modified: Thu, 04 Nov 2021 21:11:56 GMT
+2021-11-04 23:11:56.269 +02:00 [INF] Generating Vary header.
+2021-11-04 23:11:56.270 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:11:56.270 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 23:11:56.270 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfStarDone?id=1 - - - 200 390 application/json;+charset=utf-8 23.0596ms
+2021-11-04 23:12:17.127 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfStarDone?id=1 - -
+2021-11-04 23:12:17.128 +02:00 [INF] No cached response available for this request.
+2021-11-04 23:12:17.128 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:12:17.128 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 23:12:17.128 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:12:17.128 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:12:17.128 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:12:17.128 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:12:17.128 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestStarController.RequestsOfStarDone (Minly)'
+2021-11-04 23:12:17.128 +02:00 [INF] Route matched with {action = "RequestsOfStarDone", controller = "RequestStar"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfStarDone(Int32) on controller Minly.Controllers.RequestStarController (Minly).
+2021-11-04 23:12:17.129 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:12:17.135 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[Price], [r].[StarId], [r].[Status], [s].[Id], [s].[Description], [s].[Description_ar], [s].[Image], [s].[Name], [s].[Name_ar], [s].[Rate], [s].[ResponseTime]
+FROM [RequestStars] AS [r]
+INNER JOIN [Stars] AS [s] ON [r].[StarId] = [s].[Id]
+WHERE ([r].[StarId] = @__id_0) AND ([r].[Status] = CAST(1 AS bit))
+2021-11-04 23:12:17.136 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestStarDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 23:12:17.136 +02:00 [INF] Executed action Minly.Controllers.RequestStarController.RequestsOfStarDone (Minly) in 7.6105ms
+2021-11-04 23:12:17.136 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestStarController.RequestsOfStarDone (Minly)'
+2021-11-04 23:12:17.136 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:12:17.136 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:14:17 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:12:17.136 +02:00 [INF] Generating Validation headers.
+2021-11-04 23:12:17.137 +02:00 [INF] Validation headers generated. ETag: Strong, "A09F4934EAEF6134BEE0CF0A2537B154". Last-Modified: Thu, 04 Nov 2021 21:12:17 GMT
+2021-11-04 23:12:17.137 +02:00 [INF] Generating Vary header.
+2021-11-04 23:12:17.137 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:12:17.137 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 23:12:17.137 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfStarDone?id=1 - - - 200 390 application/json;+charset=utf-8 10.0907ms
+2021-11-04 23:13:14.254 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/RequestStar application/json-patch+json 98
+2021-11-04 23:13:14.260 +02:00 [INF] CORS policy execution successful.
+2021-11-04 23:13:14.261 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:13:14.261 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:13:14.261 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:13:14.261 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:13:14.261 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:13:14.261 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:13:14.267 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-11-04 23:13:14.276 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-11-04 23:13:14.277 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:13:14.277 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:15:14 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:13:14.277 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:13:14.277 +02:00 [INF] Generating Vary header.
+2021-11-04 23:13:14.277 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:13:14.278 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/RequestStar application/json-patch+json 98 - 401 - - 24.4668ms
+2021-11-04 23:14:11.303 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/register application/json 164
+2021-11-04 23:14:11.303 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:14:11.303 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:14:11.303 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:14:11.303 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:14:11.303 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:14:11.304 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:14:11.307 +02:00 [INF] Executing endpoint 'Minly.Controllers.AccountController.Register (Minly)'
+2021-11-04 23:14:11.315 +02:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Minly.Core.DTOs.UserDTO) on controller Minly.Controllers.AccountController (Minly).
+2021-11-04 23:14:11.382 +02:00 [INF] Registration Attempt for user@example.com 
+2021-11-04 23:14:11.398 +02:00 [WRN] User password validation failed: PasswordRequiresNonAlphanumeric;PasswordRequiresDigit;PasswordRequiresUpper.
+2021-11-04 23:14:11.399 +02:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary, Microsoft.AspNetCore.Mvc.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2021-11-04 23:14:11.426 +02:00 [INF] Executed action Minly.Controllers.AccountController.Register (Minly) in 110.7462ms
+2021-11-04 23:14:11.426 +02:00 [INF] Executed endpoint 'Minly.Controllers.AccountController.Register (Minly)'
+2021-11-04 23:14:11.426 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:14:11.426 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:16:11 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:14:11.426 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:14:11.426 +02:00 [INF] Generating Vary header.
+2021-11-04 23:14:11.426 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:14:11.433 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/register application/json 164 - 400 1262 application/json;+charset=utf-8 130.7405ms
+2021-11-04 23:14:37.160 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/register application/json 166
+2021-11-04 23:14:37.160 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:14:37.160 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:14:37.160 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:14:37.160 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:14:37.160 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:14:37.160 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:14:37.168 +02:00 [INF] Executing endpoint 'Minly.Controllers.AccountController.Register (Minly)'
+2021-11-04 23:14:37.169 +02:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Minly.Core.DTOs.UserDTO) on controller Minly.Controllers.AccountController (Minly).
+2021-11-04 23:14:37.173 +02:00 [INF] Registration Attempt for user@example.com 
+2021-11-04 23:14:37.197 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:14:37.210 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 23:14:37.260 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2021-11-04 23:14:37.263 +02:00 [WRN] User validation failed: DuplicateUserName;DuplicateEmail.
+2021-11-04 23:14:37.265 +02:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary, Microsoft.AspNetCore.Mvc.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2021-11-04 23:14:37.266 +02:00 [INF] Executed action Minly.Controllers.AccountController.Register (Minly) in 96.876ms
+2021-11-04 23:14:37.266 +02:00 [INF] Executed endpoint 'Minly.Controllers.AccountController.Register (Minly)'
+2021-11-04 23:14:37.266 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:14:37.266 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:16:37 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:14:37.266 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:14:37.266 +02:00 [INF] Generating Vary header.
+2021-11-04 23:14:37.266 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:14:37.268 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/register application/json 166 - 400 768 application/json;+charset=utf-8 107.8703ms
+2021-11-04 23:14:52.247 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/register application/json 168
+2021-11-04 23:14:52.247 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:14:52.247 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:14:52.247 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:14:52.248 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:14:52.248 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:14:52.248 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:14:52.248 +02:00 [INF] Executing endpoint 'Minly.Controllers.AccountController.Register (Minly)'
+2021-11-04 23:14:52.248 +02:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Minly.Core.DTOs.UserDTO) on controller Minly.Controllers.AccountController (Minly).
+2021-11-04 23:14:52.255 +02:00 [INF] Registration Attempt for userss@example.com 
+2021-11-04 23:14:52.266 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:14:52.267 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 23:14:52.270 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2021-11-04 23:14:52.300 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2021-11-04 23:14:52.313 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2021-11-04 23:14:52.317 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2021-11-04 23:14:52.393 +02:00 [ERR] Something Went Wrong in the Register
+System.InvalidOperationException: Role STRING does not exist.
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.AddToRoleAsync(TUser user, String normalizedRoleName, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.AddToRolesAsync(TUser user, IEnumerable`1 roles)
+   at Minly.Controllers.AccountController.Register(UserDTO userDTO) in H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly\Controllers\AccountController.cs:line 62
+2021-11-04 23:14:52.471 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2021-11-04 23:14:52.483 +02:00 [INF] Executed action Minly.Controllers.AccountController.Register (Minly) in 234.4458ms
+2021-11-04 23:14:52.483 +02:00 [INF] Executed endpoint 'Minly.Controllers.AccountController.Register (Minly)'
+2021-11-04 23:14:52.483 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:14:52.483 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:16:52 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:14:52.483 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:14:52.483 +02:00 [INF] Generating Vary header.
+2021-11-04 23:14:52.483 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:14:52.483 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/register application/json 168 - 500 281 application/problem+json;+charset=utf-8 235.9640ms
+2021-11-04 23:14:59.177 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/register application/json 166
+2021-11-04 23:14:59.177 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:14:59.177 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:14:59.177 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:14:59.177 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:14:59.177 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:14:59.177 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:14:59.177 +02:00 [INF] Executing endpoint 'Minly.Controllers.AccountController.Register (Minly)'
+2021-11-04 23:14:59.178 +02:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Minly.Core.DTOs.UserDTO) on controller Minly.Controllers.AccountController (Minly).
+2021-11-04 23:14:59.178 +02:00 [INF] Registration Attempt for userss@example.com 
+2021-11-04 23:14:59.187 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:14:59.190 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 23:14:59.197 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2021-11-04 23:14:59.197 +02:00 [WRN] User validation failed: DuplicateUserName;DuplicateEmail.
+2021-11-04 23:14:59.197 +02:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary, Microsoft.AspNetCore.Mvc.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2021-11-04 23:14:59.197 +02:00 [INF] Executed action Minly.Controllers.AccountController.Register (Minly) in 19.8732ms
+2021-11-04 23:14:59.198 +02:00 [INF] Executed endpoint 'Minly.Controllers.AccountController.Register (Minly)'
+2021-11-04 23:14:59.198 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:14:59.198 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:16:59 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:14:59.198 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:14:59.198 +02:00 [INF] Generating Vary header.
+2021-11-04 23:14:59.198 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:14:59.198 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/register application/json 166 - 400 772 application/json;+charset=utf-8 21.5443ms
+2021-11-04 23:15:20.591 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/Account/register application/json 168
+2021-11-04 23:15:20.591 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:15:20.591 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:15:20.591 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:15:20.591 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:15:20.591 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:15:20.591 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:15:20.591 +02:00 [INF] Executing endpoint 'Minly.Controllers.AccountController.Register (Minly)'
+2021-11-04 23:15:20.591 +02:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Minly.Core.DTOs.UserDTO) on controller Minly.Controllers.AccountController (Minly).
+2021-11-04 23:15:20.592 +02:00 [INF] Registration Attempt for usershjs@example.com 
+2021-11-04 23:15:20.601 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:15:20.606 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 23:15:20.609 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2021-11-04 23:15:20.614 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2021-11-04 23:15:20.618 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2021-11-04 23:15:20.637 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2021-11-04 23:15:20.640 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2021-11-04 23:15:20.656 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-11-04 23:15:20.658 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2021-11-04 23:15:20.675 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+2021-11-04 23:15:20.680 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+2021-11-04 23:15:20.682 +02:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-11-04 23:15:20.684 +02:00 [INF] Executed action Minly.Controllers.AccountController.Register (Minly) in 92.202ms
+2021-11-04 23:15:20.684 +02:00 [INF] Executed endpoint 'Minly.Controllers.AccountController.Register (Minly)'
+2021-11-04 23:15:20.684 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:15:20.684 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:17:20 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:15:20.684 +02:00 [INF] Generating Validation headers.
+2021-11-04 23:15:20.684 +02:00 [INF] Validation headers generated. ETag: Strong, "BB7D4860E0EED243F3CED6E6A764AF43". Last-Modified: Thu, 04 Nov 2021 21:15:20 GMT
+2021-11-04 23:15:20.684 +02:00 [INF] Generating Vary header.
+2021-11-04 23:15:20.684 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:15:20.686 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/Account/register application/json 168 - 202 50 application/json;+charset=utf-8 94.8970ms
+2021-11-04 23:16:13.572 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44379/api/RequestEvent application/json 120
+2021-11-04 23:16:13.576 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:16:13.576 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:16:13.576 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:16:13.576 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:16:13.576 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:16:13.576 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:16:13.578 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-11-04 23:16:13.579 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-11-04 23:16:13.579 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:16:13.579 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:18:13 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:16:13.579 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:16:13.579 +02:00 [INF] Generating Vary header.
+2021-11-04 23:16:13.579 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:16:13.581 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44379/api/RequestEvent application/json 120 - 401 - - 8.9927ms
+2021-11-04 23:16:37.490 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfEventDone?id=1 - -
+2021-11-04 23:16:37.495 +02:00 [INF] No cached response available for this request.
+2021-11-04 23:16:37.495 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:16:37.495 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 23:16:37.495 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:16:37.495 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:16:37.495 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:16:37.495 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:16:37.513 +02:00 [INF] Request did not specify a service API version, but multiple candidate actions were found. Candidate actions: Minly.Controllers.RequestStarController.GetRequestStar (Minly)
+2021-11-04 23:16:37.514 +02:00 [INF] Executing endpoint 'null'
+2021-11-04 23:16:37.517 +02:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Microsoft.AspNetCore.Mvc.Versioning, Version=4.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]], Microsoft.AspNetCore.Mvc.Versioning, Version=4.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2021-11-04 23:16:37.521 +02:00 [INF] Executed endpoint 'null'
+2021-11-04 23:16:37.521 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:16:37.521 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:18:37 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:16:37.521 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:16:37.521 +02:00 [INF] Generating Vary header.
+2021-11-04 23:16:37.521 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:16:37.521 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 23:16:37.525 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfEventDone?id=1 - - - 400 199 application/json;+charset=utf-8 32.7888ms
+2021-11-04 23:17:07.983 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestEvent/RequestsOfEventStillNotDone?id=1 - -
+2021-11-04 23:17:07.984 +02:00 [INF] No cached response available for this request.
+2021-11-04 23:17:07.984 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:17:07.988 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 23:17:07.988 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:17:07.988 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:17:07.988 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:17:07.988 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:17:07.988 +02:00 [INF] Executing endpoint 'Minly.Controllers.RequestEventController.RequestsOfEventStillNotDone (Minly)'
+2021-11-04 23:17:07.993 +02:00 [INF] Route matched with {action = "RequestsOfEventStillNotDone", controller = "RequestEvent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RequestsOfEventStillNotDone(Int32) on controller Minly.Controllers.RequestEventController (Minly).
+2021-11-04 23:17:07.997 +02:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-04 23:17:08.019 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ApiUserId], [r].[DateCreated], [r].[EventId], [r].[Price], [r].[Status], [e].[Id], [e].[Date], [e].[Description], [e].[Description_ar], [e].[EventTypeId], [e].[Image], [e].[Name], [e].[Name_ar], [e].[Rate], [e].[Status]
+FROM [RequestEvents] AS [r]
+INNER JOIN [Events] AS [e] ON [r].[EventId] = [e].[Id]
+WHERE ([r].[EventId] = @__id_0) AND ([r].[Status] <> CAST(1 AS bit))
+2021-11-04 23:17:08.029 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Minly.Core.DTOs.RequestEventDTO, Minly.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-11-04 23:17:08.032 +02:00 [INF] Executed action Minly.Controllers.RequestEventController.RequestsOfEventStillNotDone (Minly) in 38.2779ms
+2021-11-04 23:17:08.032 +02:00 [INF] Executed endpoint 'Minly.Controllers.RequestEventController.RequestsOfEventStillNotDone (Minly)'
+2021-11-04 23:17:08.032 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:17:08.032 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:19:08 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:17:08.032 +02:00 [INF] Generating Validation headers.
+2021-11-04 23:17:08.032 +02:00 [INF] Validation headers generated. ETag: Strong, "47765A2965CDBC014E1FE53C92B47413". Last-Modified: Thu, 04 Nov 2021 21:17:08 GMT
+2021-11-04 23:17:08.032 +02:00 [INF] Generating Vary header.
+2021-11-04 23:17:08.033 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:17:08.033 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 23:17:08.034 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestEvent/RequestsOfEventStillNotDone?id=1 - - - 200 2 application/json;+charset=utf-8 50.3884ms
+2021-11-04 23:17:55.067 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfEvent?id=1 - -
+2021-11-04 23:17:55.067 +02:00 [INF] No cached response available for this request.
+2021-11-04 23:17:55.068 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:17:55.068 +02:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-11-04 23:17:55.068 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:17:55.068 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:17:55.068 +02:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-11-04 23:17:55.068 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:17:55.069 +02:00 [INF] Request did not specify a service API version, but multiple candidate actions were found. Candidate actions: Minly.Controllers.RequestStarController.GetRequestStar (Minly)
+2021-11-04 23:17:55.069 +02:00 [INF] Executing endpoint 'null'
+2021-11-04 23:17:55.069 +02:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[<>f__AnonymousType1`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Microsoft.AspNetCore.Mvc.Versioning, Version=4.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]], Microsoft.AspNetCore.Mvc.Versioning, Version=4.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2021-11-04 23:17:55.069 +02:00 [INF] Executed endpoint 'null'
+2021-11-04 23:17:55.069 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:17:55.069 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:19:55 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:17:55.069 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:17:55.069 +02:00 [INF] Generating Vary header.
+2021-11-04 23:17:55.069 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:17:55.070 +02:00 [INF] The response could not be cached for this request.
+2021-11-04 23:17:55.070 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/api/RequestStar/RequestsOfEvent?id=1 - - - 400 195 application/json;+charset=utf-8 2.9559ms
+2021-11-04 23:18:08.887 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:44379/api/RequestStar/AcceptRequestEvent?id=3 - 0
+2021-11-04 23:18:08.888 +02:00 [INF] Checking for conditional GET/HEAD.
+2021-11-04 23:18:08.888 +02:00 [INF] Not valid - method isn't GET or HEAD.
+2021-11-04 23:18:08.888 +02:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-11-04 23:18:08.888 +02:00 [INF] Checking for conditional PUT/PATCH.
+2021-11-04 23:18:08.888 +02:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-11-04 23:18:08.888 +02:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-11-04 23:18:08.889 +02:00 [INF] Successfully validated the token.
+2021-11-04 23:18:08.889 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2021-11-04 23:18:08.889 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2021-11-04 23:18:08.890 +02:00 [INF] Generating expiration headers.
+2021-11-04 23:18:08.890 +02:00 [INF] Expiration headers generated. Expires: Thu, 04 Nov 2021 21:20:08 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-11-04 23:18:08.890 +02:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-11-04 23:18:08.890 +02:00 [INF] Generating Vary header.
+2021-11-04 23:18:08.890 +02:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-11-04 23:18:08.890 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:44379/api/RequestStar/AcceptRequestEvent?id=3 - 0 - 405 - - 2.9979ms

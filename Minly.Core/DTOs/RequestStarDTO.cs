@@ -13,6 +13,7 @@ namespace Minly.Core.DTOs
         public double Price { get; set; }
         public DateTime DateCreated { get; set; }
         public bool Status { get; set; }
+        public bool Payed { get; set; }
 
 
         public string ApiUserId { get; set; }
@@ -27,6 +28,7 @@ namespace Minly.Core.DTOs
         public double Price { get; set; }
         public DateTime DateCreated { get; set; }
         public bool Status { get; set; }
+        public bool Payed { get; set; }
         public string ApiUserId { get; set; }
         public int StarId { get; set; }
     }

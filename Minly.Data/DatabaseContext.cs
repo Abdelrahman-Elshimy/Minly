@@ -27,6 +27,7 @@ namespace Minly.Data
         public DbSet<StarRate> StarRates { get; set; }
         public DbSet<RequestEvent> RequestEvents { get; set; }
         public DbSet<RequestStar> RequestStars { get; set; }
+        public DbSet<StarResponse> StarResponses { get; set; }
 
         
 

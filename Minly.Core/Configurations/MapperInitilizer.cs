@@ -36,6 +36,8 @@ namespace Minly.Core.Configurations
             CreateMap<RequestEvent, CreateRequestEventDTO>().ReverseMap();
             CreateMap<RequestStar, RequestStarDTO>().ReverseMap();
             CreateMap<RequestStar, CreateRequestStarDTO>().ReverseMap();
+            CreateMap<StarResponse, StarResponseDTO>().ReverseMap();
+            CreateMap<StarResponse, CreateStarResponseDTO>().ReverseMap();
         }
     }
 }

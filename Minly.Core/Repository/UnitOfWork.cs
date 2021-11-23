@@ -22,8 +22,7 @@ namespace Minly.Core.Repository
         private IGenericRepository<StarRate> _starrates;
         private IGenericRepository<RequestEvent> _requestevents;
         private IGenericRepository<RequestStar> _requeststars;
-
-        
+        private IGenericRepository<StarResponse> _starresponse;
 
         public UnitOfWork(DatabaseContext context)
         {
@@ -33,7 +32,6 @@ namespace Minly.Core.Repository
         public IGenericRepository<Category> Categories => _categories ??= new GenericRepository<Category>(_context);
         public IGenericRepository<Star> Stars => _stars ??= new GenericRepository<Star>(_context);
         public IGenericRepository<Service> Services => _services ??= new GenericRepository<Service>(_context);
-
         public IGenericRepository<Event> Events => _events ??= new GenericRepository<Event>(_context);
         public IGenericRepository<EventType> EventTypes => _eventtypes ??= new GenericRepository<EventType>(_context);
         public IGenericRepository<EventMembership> EventMemberships => _eventmemberships ??= new GenericRepository<EventMembership>(_context);
@@ -43,6 +41,7 @@ namespace Minly.Core.Repository
         public IGenericRepository<StarRate> StarRates => _starrates ??= new GenericRepository<StarRate>(_context);
         public IGenericRepository<RequestEvent> RequestEvents => _requestevents ??= new GenericRepository<RequestEvent>(_context);
         public IGenericRepository<RequestStar> RequestStars => _requeststars ??= new GenericRepository<RequestStar>(_context);
+        public IGenericRepository<StarResponse> StarResponses => _starresponse ??= new GenericRepository<StarResponse>(_context);
 
         public void Dispose()
         {

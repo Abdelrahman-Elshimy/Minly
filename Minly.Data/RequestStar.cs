@@ -13,7 +13,7 @@ namespace Minly.Data
         public double Price { get; set; }
         public DateTime DateCreated { get; set; }
         public bool Status { get; set; }
-
+        public bool Payed { get; set; }
 
         [ForeignKey(nameof(ApiUser))]
         public string ApiUserId { get; set; }

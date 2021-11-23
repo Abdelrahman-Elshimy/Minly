@@ -61,13 +61,7 @@ namespace Minly
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Minly", Version = "v1" });
             });
 
-            services.AddControllers(/*config => {
-                config.CacheProfiles.Add("120SecondsDuration", new CacheProfile
-                {
-                    Duration = 120
-
-                });
-            }*/).AddNewtonsoftJson(op =>
+            services.AddControllers().AddNewtonsoftJson(op =>
             op.SerializerSettings.ReferenceLoopHandling =
                 Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 

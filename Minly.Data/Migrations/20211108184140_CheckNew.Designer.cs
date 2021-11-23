@@ -10,8 +10,8 @@ using Minly.Data;
 namespace Minly.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211104091655_Request-Event")]
-    partial class RequestEvent
+    [Migration("20211108184140_CheckNew")]
+    partial class CheckNew
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -65,22 +65,22 @@ namespace Minly.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8b694c30-fdc3-4140-b8d7-a7e492f708b3",
-                            ConcurrencyStamp = "c34c22f7-a57c-4115-93c4-d6d998512179",
+                            Id = "2b66e7b1-f2f8-4d1e-9b5c-4b76446832d2",
+                            ConcurrencyStamp = "0ecb4ef7-d625-4de2-9e9c-56f6b3e0b0aa",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "04ec90d2-f6d6-4424-8951-8d9ec8095bf3",
-                            ConcurrencyStamp = "7b21df6e-1ec0-4fde-9d07-fa9cccd34179",
+                            Id = "54d58dc7-533d-41f6-b31b-c94ec70668a3",
+                            ConcurrencyStamp = "41d8d60b-5615-42de-8cc6-2367b038b3a9",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "41709c68-d55e-4429-b36d-1c783d54b772",
-                            ConcurrencyStamp = "2f173411-ab5e-4fe0-a40d-739b8eb75f0a",
+                            Id = "6d119d2e-0352-49a7-8963-ef18a3c225e0",
+                            ConcurrencyStamp = "4ddafb74-b33b-42ba-afd0-770bcfddca0e",
                             Name = "Star",
                             NormalizedName = "STAR"
                         });
@@ -460,6 +460,40 @@ namespace Minly.Data.Migrations
                     b.ToTable("RequestEvents");
                 });
 
+            modelBuilder.Entity("Minly.Data.RequestStar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("ApiUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Payed")
+                        .HasColumnType("bit");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<int>("StarId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApiUserId");
+
+                    b.HasIndex("StarId");
+
+                    b.ToTable("RequestStars");
+                });
+
             modelBuilder.Entity("Minly.Data.Service", b =>
                 {
                     b.Property<int>("Id")
@@ -591,6 +625,32 @@ namespace Minly.Data.Migrations
                     b.HasIndex("StarId");
 
                     b.ToTable("StarRates");
+                });
+
+            modelBuilder.Entity("Minly.Data.StarResponse", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Audio")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RequestStarId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Video")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RequestStarId");
+
+                    b.ToTable("StarResponses");
                 });
 
             modelBuilder.Entity("Minly.Data.StarService", b =>
@@ -770,6 +830,23 @@ namespace Minly.Data.Migrations
                     b.Navigation("Event");
                 });
 
+            modelBuilder.Entity("Minly.Data.RequestStar", b =>
+                {
+                    b.HasOne("Minly.Data.ApiUser", "ApiUser")
+                        .WithMany()
+                        .HasForeignKey("ApiUserId");
+
+                    b.HasOne("Minly.Data.Star", "Star")
+                        .WithMany()
+                        .HasForeignKey("StarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApiUser");
+
+                    b.Navigation("Star");
+                });
+
             modelBuilder.Entity("Minly.Data.Sponsor", b =>
                 {
                     b.HasOne("Minly.Data.Event", null)
@@ -811,6 +888,17 @@ namespace Minly.Data.Migrations
                     b.Navigation("ApiUser");
 
                     b.Navigation("Star");
+                });
+
+            modelBuilder.Entity("Minly.Data.StarResponse", b =>
+                {
+                    b.HasOne("Minly.Data.RequestStar", "RequestStar")
+                        .WithMany()
+                        .HasForeignKey("RequestStarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("RequestStar");
                 });
 
             modelBuilder.Entity("Minly.Data.StarService", b =>

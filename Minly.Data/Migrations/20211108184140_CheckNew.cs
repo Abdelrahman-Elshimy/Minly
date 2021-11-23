@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Minly.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class CheckNew : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -62,6 +62,20 @@ namespace Minly.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "EventTypes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name_ar = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EventTypes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Services",
                 columns: table => new
                 {
@@ -89,7 +103,8 @@ namespace Minly.Data.Migrations
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ResponseTime = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description_ar = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Description_ar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Rate = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -203,6 +218,33 @@ namespace Minly.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Events",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name_ar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description_ar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Rate = table.Column<double>(type: "float", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    EventTypeId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Events", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Events_EventTypes_EventTypeId",
+                        column: x => x.EventTypeId,
+                        principalTable: "EventTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CategoryStar",
                 columns: table => new
                 {
@@ -221,6 +263,36 @@ namespace Minly.Data.Migrations
                     table.ForeignKey(
                         name: "FK_CategoryStar_Stars_StarsId",
                         column: x => x.StarsId,
+                        principalTable: "Stars",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RequestStars",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    Payed = table.Column<bool>(type: "bit", nullable: false),
+                    ApiUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    StarId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RequestStars", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RequestStars_AspNetUsers_ApiUserId",
+                        column: x => x.ApiUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_RequestStars_Stars_StarId",
+                        column: x => x.StarId,
                         principalTable: "Stars",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -277,11 +349,39 @@ namespace Minly.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "StarRates",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Rate = table.Column<double>(type: "float", nullable: false),
+                    StarId = table.Column<int>(type: "int", nullable: false),
+                    ApiUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_StarRates", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_StarRates_AspNetUsers_ApiUserId",
+                        column: x => x.ApiUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_StarRates_Stars_StarId",
+                        column: x => x.StarId,
+                        principalTable: "Stars",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "StarServices",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Price = table.Column<double>(type: "float", nullable: false),
                     StarId = table.Column<int>(type: "int", nullable: false),
                     ServiceId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -302,20 +402,175 @@ namespace Minly.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "AspNetRoles",
-                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "4d5f1719-0235-4517-a871-c71851b8d6bf", "6ac2f03b-f61e-43d7-bdff-705c97596b30", "User", "USER" });
+            migrationBuilder.CreateTable(
+                name: "EventMemberships",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name_ar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description_ar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    EventId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EventMemberships", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_EventMemberships_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EventRates",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Rate = table.Column<double>(type: "float", nullable: false),
+                    EventId = table.Column<int>(type: "int", nullable: false),
+                    ApiUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EventRates", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_EventRates_AspNetUsers_ApiUserId",
+                        column: x => x.ApiUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_EventRates_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RequestEvents",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    ApiUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    EventId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RequestEvents", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RequestEvents_AspNetUsers_ApiUserId",
+                        column: x => x.ApiUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_RequestEvents_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Sponsors",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name_ar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Logo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EventId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sponsors", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Sponsors_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "StarResponses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Video = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Audio = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RequestStarId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_StarResponses", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_StarResponses_RequestStars_RequestStarId",
+                        column: x => x.RequestStarId,
+                        principalTable: "RequestStars",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EventVideos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name_ar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description_ar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Link = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EventMembershipId = table.Column<int>(type: "int", nullable: false),
+                    EventId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EventVideos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_EventVideos_EventMemberships_EventMembershipId",
+                        column: x => x.EventMembershipId,
+                        principalTable: "EventMemberships",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_EventVideos_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "a91f2ecb-e55e-49e3-9f7f-ead718d1d24e", "53302413-c3e4-47c8-a575-fb2de369324e", "Administrator", "ADMINISTRATOR" });
+                values: new object[] { "2b66e7b1-f2f8-4d1e-9b5c-4b76446832d2", "0ecb4ef7-d625-4de2-9e9c-56f6b3e0b0aa", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "6a119765-45b5-47b4-9f24-efe317883d7d", "fdd979be-d720-4eb0-98d9-6d42a597e6fd", "Star", "STAR" });
+                values: new object[] { "54d58dc7-533d-41f6-b31b-c94ec70668a3", "41d8d60b-5615-42de-8cc6-2367b038b3a9", "Administrator", "ADMINISTRATOR" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "6d119d2e-0352-49a7-8963-ef18a3c225e0", "4ddafb74-b33b-42ba-afd0-770bcfddca0e", "Star", "STAR" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -362,9 +617,64 @@ namespace Minly.Data.Migrations
                 column: "StarsId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_EventMemberships_EventId",
+                table: "EventMemberships",
+                column: "EventId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EventRates_ApiUserId",
+                table: "EventRates",
+                column: "ApiUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EventRates_EventId",
+                table: "EventRates",
+                column: "EventId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Events_EventTypeId",
+                table: "Events",
+                column: "EventTypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EventVideos_EventId",
+                table: "EventVideos",
+                column: "EventId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EventVideos_EventMembershipId",
+                table: "EventVideos",
+                column: "EventMembershipId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RequestEvents_ApiUserId",
+                table: "RequestEvents",
+                column: "ApiUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RequestEvents_EventId",
+                table: "RequestEvents",
+                column: "EventId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RequestStars_ApiUserId",
+                table: "RequestStars",
+                column: "ApiUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RequestStars_StarId",
+                table: "RequestStars",
+                column: "StarId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ServiceStar_StarsId",
                 table: "ServiceStar",
                 column: "StarsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sponsors_EventId",
+                table: "Sponsors",
+                column: "EventId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StarCategories_CategoryId",
@@ -375,6 +685,21 @@ namespace Minly.Data.Migrations
                 name: "IX_StarCategories_StarId",
                 table: "StarCategories",
                 column: "StarId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StarRates_ApiUserId",
+                table: "StarRates",
+                column: "ApiUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StarRates_StarId",
+                table: "StarRates",
+                column: "StarId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StarResponses_RequestStarId",
+                table: "StarResponses",
+                column: "RequestStarId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StarServices_ServiceId",
@@ -408,10 +733,28 @@ namespace Minly.Data.Migrations
                 name: "CategoryStar");
 
             migrationBuilder.DropTable(
+                name: "EventRates");
+
+            migrationBuilder.DropTable(
+                name: "EventVideos");
+
+            migrationBuilder.DropTable(
+                name: "RequestEvents");
+
+            migrationBuilder.DropTable(
                 name: "ServiceStar");
 
             migrationBuilder.DropTable(
+                name: "Sponsors");
+
+            migrationBuilder.DropTable(
                 name: "StarCategories");
+
+            migrationBuilder.DropTable(
+                name: "StarRates");
+
+            migrationBuilder.DropTable(
+                name: "StarResponses");
 
             migrationBuilder.DropTable(
                 name: "StarServices");
@@ -420,16 +763,28 @@ namespace Minly.Data.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "EventMemberships");
 
             migrationBuilder.DropTable(
                 name: "Categories");
 
             migrationBuilder.DropTable(
+                name: "RequestStars");
+
+            migrationBuilder.DropTable(
                 name: "Services");
 
             migrationBuilder.DropTable(
+                name: "Events");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
                 name: "Stars");
+
+            migrationBuilder.DropTable(
+                name: "EventTypes");
         }
     }
 }

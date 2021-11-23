@@ -41,6 +41,26 @@ namespace Minly.Controllers
             var results = _mapper.Map<IList<RequestStarDTO>>(RequestStars);
             return Ok(results);
         }
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [Route("RequestsOfStarStillNotDone")]
+        public async Task<IActionResult> RequestsOfStarStillNotDone(int id)
+        {
+            var RequestStars = await _unitOfWork.RequestStars.GetAll(q => q.StarId == id && q.Status == false, include: q => q.Include(x => x.Star));
+            var results = _mapper.Map<IList<RequestStarDTO>>(RequestStars);
+            return Ok(results);
+        }
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [Route("RequestsOfStarDone")]
+        public async Task<IActionResult> RequestsOfStarDone(int id)
+        {
+            var RequestStars = await _unitOfWork.RequestStars.GetAll(q => q.StarId == id && q.Status == true, include: q => q.Include(x => x.Star));
+            var results = _mapper.Map<IList<RequestStarDTO>>(RequestStars);
+            return Ok(results);
+        }
 
         [HttpGet("{id:int}", Name = "GetRequestStar")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -74,6 +94,7 @@ namespace Minly.Controllers
             }
             else
             {
+                RequestStar.Payed = false;
                 await _unitOfWork.RequestStars.Insert(RequestStar);
                 await _unitOfWork.Save();
 
@@ -81,34 +102,36 @@ namespace Minly.Controllers
             return CreatedAtRoute("GetRequestStar", new { id = RequestStar.Id }, RequestStar);
         }
 
-        //[Authorize]
-        //[HttpPut("{id:int}")]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
-        //[ProducesResponseType(StatusCodes.Status204NoContent)]
-        //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        //public async Task<IActionResult> UpdateRequestStar(int id, [FromBody] UpdateRequestStarDTO RequestStarDTO)
-        //{
-        //    if (!ModelState.IsValid || id < 1)
-        //    {
-        //        _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateRequestStar)}");
-        //        return BadRequest(ModelState);
-        //    }
+        [Authorize]
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [Route("AcceptRequestStar")]
+        public async Task<IActionResult> AcceptRequestStar(int id)
+        {
+            if (!ModelState.IsValid || id < 1)
+            {
+                _logger.LogError($"Invalid UPDATE attempt in {nameof(AcceptRequestStar)}");
+                return BadRequest(ModelState);
+            }
 
 
-        //    var RequestStar = await _unitOfWork.RequestStars.Get(q => q.Id == id);
-        //    if (RequestStar == null)
-        //    {
-        //        _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateRequestStar)}");
-        //        return BadRequest("Submitted data is invalid");
-        //    }
+            var RequestStar = await _unitOfWork.RequestStars.Get(q => q.Id == id);
+            if (RequestStar == null)
+            {
+                _logger.LogError($"Invalid UPDATE attempt in {nameof(AcceptRequestStar)}");
+                return BadRequest("Submitted data is invalid");
+            }
 
-        //    _mapper.Map(RequestStarDTO, RequestStar);
-        //    _unitOfWork.RequestStars.Update(RequestStar);
-        //    await _unitOfWork.Save();
+            RequestStar.Status = true;
 
-        //    return NoContent();
+            _unitOfWork.RequestStars.Update(RequestStar);
+            await _unitOfWork.Save();
 
-        //}
+            return Accepted(new { Message = "Accepted Successfully", StatusCode = 202 });
+
+        }
 
         //[Authorize]
         //[HttpDelete("{id:int}")]

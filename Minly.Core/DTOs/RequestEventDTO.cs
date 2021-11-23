@@ -13,11 +13,8 @@ namespace Minly.Core.DTOs
         public double Price { get; set; }
         public DateTime DateCreated { get; set; }
         public bool Status { get; set; }
-
-
         public string ApiUserId { get; set; }
         public ApiUser ApiUser { get; set; }
-
         public int EventId { get; set; }
         public Event Event { get; set; }
     }

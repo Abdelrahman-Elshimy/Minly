@@ -32,75 +32,75 @@ namespace Minly.Controllers
             _authManager = authManager;
         }
 
-        [HttpPost]
-        [Route("register")]
-        [ProducesResponseType(StatusCodes.Status202Accepted)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Register([FromBody] UserDTO userDTO)
-        {
-            _logger.LogInformation($"Registration Attempt for {userDTO.Email} ");
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //[HttpPost]
+        //[Route("register")]
+        //[ProducesResponseType(StatusCodes.Status202Accepted)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        //public async Task<IActionResult> Register([FromBody] UserDTO userDTO)
+        //{
+        //    _logger.LogInformation($"Registration Attempt for {userDTO.Email} ");
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            try
-            {
-                var user = _mapper.Map<ApiUser>(userDTO);
-                user.UserName = userDTO.Email;
-                var result = await _userManager.CreateAsync(user, userDTO.Password);
+        //    try
+        //    {
+        //        var user = _mapper.Map<ApiUser>(userDTO);
+        //        user.UserName = userDTO.Email;
+        //        var result = await _userManager.CreateAsync(user, userDTO.Password);
 
-                if (!result.Succeeded)
-                {
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError(error.Code, error.Description);
-                    }
-                    return BadRequest(new { Message = "Failed to register", Status = 400, error = ModelState });
-                }
-                await _userManager.AddToRolesAsync(user, userDTO.Roles);
-                return Accepted(new { Message = "Registered Successfully", Status = 202 });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Something Went Wrong in the {nameof(Register)}");
-                var error = new Error
-                {
-                    Message = "User not registered successfully",
-                    StatusCode = 500,
+        //        if (!result.Succeeded)
+        //        {
+        //            foreach (var error in result.Errors)
+        //            {
+        //                ModelState.AddModelError(error.Code, error.Description);
+        //            }
+        //            return BadRequest(new { Message = "Failed to register", Status = 400, error = ModelState });
+        //        }
+        //        await _userManager.AddToRolesAsync(user, userDTO.Roles);
+        //        return Accepted(new { Message = "Registered Successfully", Status = 202 });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, $"Something Went Wrong in the {nameof(Register)}");
+        //        var error = new Error
+        //        {
+        //            Message = "User not registered successfully",
+        //            StatusCode = 500,
 
-                };
-                return Problem(error.ToString());
-            }
-        }
+        //        };
+        //        return Problem(error.ToString());
+        //    }
+        //}
 
-        [HttpPost]
-        [Route("login")]
-        public async Task<IActionResult> Login([FromBody] LoginUserDTO userDTO)
-        {
-            _logger.LogInformation($"Login Attempt for {userDTO.Email} ");
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(new { Message = "Failed to Login", Status = 400, error = ModelState });
-            }
+        //[HttpPost]
+        //[Route("login")]
+        //public async Task<IActionResult> Login([FromBody] LoginUserDTO userDTO)
+        //{
+        //    _logger.LogInformation($"Login Attempt for {userDTO.Email} ");
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(new { Message = "Failed to Login", Status = 400, error = ModelState });
+        //    }
 
-            try
-            {
-                if (!await _authManager.ValidateUser(userDTO))
-                {
-                    return Unauthorized(new { Message = "Failed to Login", Status = 400, error = "Email or password is uncorrect" });
-                }
+        //    try
+        //    {
+        //        if (!await _authManager.ValidateUser(userDTO))
+        //        {
+        //            return Unauthorized(new { Message = "Failed to Login", Status = 400, error = "Email or password is uncorrect" });
+        //        }
 
                 
 
-                return Accepted(new { Token = await _authManager.CreateToken(), User = _authManager.GetUserByEmailAndPassword(userDTO).Result });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Something Went Wrong in the {nameof(Login)}");
-                return Problem($"Something Went Wrong in the {nameof(Login)}", statusCode: 500);
-            }
-        }
+        //        return Accepted(new { Token = await _authManager.CreateToken(), User = _authManager.GetUserByEmailAndPassword(userDTO).Result });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, $"Something Went Wrong in the {nameof(Login)}");
+        //        return Problem($"Something Went Wrong in the {nameof(Login)}", statusCode: 500);
+        //    }
+        //}
     }
 }

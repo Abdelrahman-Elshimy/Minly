@@ -48,7 +48,7 @@ namespace Minly.Controllers
                     return Problem(error.ToString());
                 }
                 return Ok(results);
-            }catch (Exception ex)
+            }catch 
             {
                 var error = new Error
                 {
@@ -79,7 +79,7 @@ namespace Minly.Controllers
                     return Problem(error.ToString());
                 }
                 return Ok(result);
-            }catch (Exception ex)
+            }catch
             {
                 var error = new Error
                 {

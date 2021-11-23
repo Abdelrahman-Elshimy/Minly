@@ -1,0 +1,12 @@
+2021-11-17 01:02:07.696 +02:00 [INF] Application Is Starting
+2021-11-17 01:02:12.284 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-17 01:02:13.306 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-17 01:02:13.306 +02:00 [INF] Hosting environment: Development
+2021-11-17 01:02:13.306 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-17 01:02:13.415 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-17 01:02:13.735 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 320.7653ms
+2021-11-17 01:02:14.086 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-17 01:02:14.168 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/favicon-32x32.png - -
+2021-11-17 01:02:14.234 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-11-17 01:02:14.240 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/favicon-32x32.png - - - 200 628 image/png 68.6584ms
+2021-11-17 01:02:14.324 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 189.0494ms

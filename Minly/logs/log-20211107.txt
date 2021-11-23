@@ -1,0 +1,18 @@
+2021-11-07 13:27:46.915 +02:00 [INF] Application Is Starting
+2021-11-07 13:27:52.000 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-07 13:27:52.862 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-07 13:27:52.862 +02:00 [INF] Hosting environment: Development
+2021-11-07 13:27:52.862 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-07 13:27:52.920 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-07 13:27:53.109 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 190.9874ms
+2021-11-07 13:27:53.462 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-07 13:27:53.625 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 163.1616ms
+2021-11-07 17:13:51.007 +02:00 [INF] Application Is Starting
+2021-11-07 17:13:54.036 +02:00 [INF] User profile is available. Using 'C:\Users\Abdelrahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-07 17:13:54.863 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-07 17:13:54.864 +02:00 [INF] Hosting environment: Development
+2021-11-07 17:13:54.864 +02:00 [INF] Content root path: H:\Testing\Abdelrahman\HotelListing-API-dotnet5-master\Minly
+2021-11-07 17:13:55.164 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/index.html - -
+2021-11-07 17:13:55.394 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/index.html - - - 200 - text/html;charset=utf-8 232.9952ms
+2021-11-07 17:13:55.890 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - -
+2021-11-07 17:13:56.156 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44379/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 265.4675ms

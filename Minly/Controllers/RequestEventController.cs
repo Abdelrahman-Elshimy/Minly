@@ -42,6 +42,28 @@ namespace Minly.Controllers
             return Ok(results);
         }
 
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [Route("RequestsOfEventStillNotDone")]
+        public async Task<IActionResult> RequestsOfEventStillNotDone(int id)
+        {
+            var RequestEvents = await _unitOfWork.RequestEvents.GetAll(q => q.EventId == id && q.Status == false, include: q => q.Include(x => x.Event));
+            var results = _mapper.Map<IList<RequestEventDTO>>(RequestEvents);
+            return Ok(results);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [Route("RequestsOfEventDone")]
+        public async Task<IActionResult> RequestsOfEventDone(int id)
+        {
+            var RequestEvents = await _unitOfWork.RequestEvents.GetAll(q => q.EventId == id && q.Status == true, include: q => q.Include(x => x.Event));
+            var results = _mapper.Map<IList<RequestEventDTO>>(RequestEvents);
+            return Ok(results);
+        }
+
         [HttpGet("{id:int}", Name = "GetRequestEvent")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -81,34 +103,36 @@ namespace Minly.Controllers
             return CreatedAtRoute("GetRequestEvent", new { id = RequestEvent.Id }, RequestEvent);
         }
 
-        //[Authorize]
-        //[HttpPut("{id:int}")]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
-        //[ProducesResponseType(StatusCodes.Status204NoContent)]
-        //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        //public async Task<IActionResult> UpdateRequestEvent(int id, [FromBody] UpdateRequestEventDTO RequestEventDTO)
-        //{
-        //    if (!ModelState.IsValid || id < 1)
-        //    {
-        //        _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateRequestEvent)}");
-        //        return BadRequest(ModelState);
-        //    }
+        [Authorize]
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [Route("AcceptRequestEvent")]
+        public async Task<IActionResult> AcceptRequestEvent(int id)
+        {
+            if (!ModelState.IsValid || id < 1)
+            {
+                _logger.LogError($"Invalid UPDATE attempt in {nameof(AcceptRequestEvent)}");
+                return BadRequest(ModelState);
+            }
 
 
-        //    var RequestEvent = await _unitOfWork.RequestEvents.Get(q => q.Id == id);
-        //    if (RequestEvent == null)
-        //    {
-        //        _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateRequestEvent)}");
-        //        return BadRequest("Submitted data is invalid");
-        //    }
+            var RequestEvent = await _unitOfWork.RequestEvents.Get(q => q.Id == id);
+            if (RequestEvent == null)
+            {
+                _logger.LogError($"Invalid UPDATE attempt in {nameof(AcceptRequestEvent)}");
+                return BadRequest("Submitted data is invalid");
+            }
 
-        //    _mapper.Map(RequestEventDTO, RequestEvent);
-        //    _unitOfWork.RequestEvents.Update(RequestEvent);
-        //    await _unitOfWork.Save();
+            RequestEvent.Status = true;
 
-        //    return NoContent();
+            _unitOfWork.RequestEvents.Update(RequestEvent);
+            await _unitOfWork.Save();
 
-        //}
+            return Accepted(new { Message = "Accepted Successfully", StatusCode = 202 });
+
+        }
 
         //[Authorize]
         //[HttpDelete("{id:int}")]
